@@ -15,7 +15,7 @@ def main(args):
     for csv in args.input_csv:
         df = pd.read_csv(csv)
         for idx, row in df.iterrows():
-            intelligibility = row['intelligibility']
+            intelligibility = row['intelligiblity']
             key = row['key']
             speaker = key[:-3]
             filename = key + ".wav"
