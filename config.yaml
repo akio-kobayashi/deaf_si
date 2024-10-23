@@ -1,0 +1,32 @@
+# 学習データの保存場所
+csv: 'your_training_data-path'
+# DataLoaderのパラメータ
+batch_size: 8
+num_workers: 1
+# 学習時のパラメータ
+trainer:
+  accelerator: 'auto'
+  accumulate_grad_batches: 5
+  max_epochs: 50
+  precision: '16-mixed'
+  profiler: 'simple'
+  gradient_clip_val: 5.
+optimizer:
+  lr: 1.e-4
+# ログの保存場所
+logger:
+  save_dir: './'
+  version: 1
+  name: 'your-model-name'
+# 中間モデルの保存
+checkpoint:
+  monitor: 'valid_loss'
+  filename: 'checkpoint_{epoch}-{step}-{valid_loss:.2f}'
+  save_last: True
+  save_top_k: 1
+  mode: 'min'
+  every_n_epochs: 1
+model:
+  lora_attention_dim: 8
+  lora_alpha: 32
+  lora_dropout: 0.1
