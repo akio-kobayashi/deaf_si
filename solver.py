@@ -14,7 +14,8 @@ class LightningSolver(pl.LightningModule):
         self.optim_config=config['optimizer']
 
         self.model = SIModel(config['model'])
-        self.loss = nn.MSELoss()
+        #self.loss = nn.MSELoss()
+        self.loss = nn.HuberLoss(delta=1.0)
         self.save_hyperparameters()
 
     def forward(self, wave:Tensor, lengths:list) -> Tensor:
