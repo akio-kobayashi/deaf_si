@@ -21,7 +21,7 @@ def main(args):
             filename = key + ".wav"
             path = find_file(filename, args.search_dir)
 
-            data['path'].append(path)
+            data['path'].append(os.path.abspath(path))
             data['intelligibility'].append(intelligibility)
             data['speaker'].append(speaker)
    

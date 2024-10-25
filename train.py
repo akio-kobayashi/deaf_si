@@ -5,9 +5,11 @@ import torch.utils.data as data
 from solver import LightningSolver
 from speech_dataset import SpeechDataset
 from speech_dataset import data_processing
+from model import SIModel
 from argparse import ArgumentParser
 import yaml
 import warnings
+import check_gpu
 warnings.filterwarnings('ignore')
 
 def train(config:dict, target_speaker):
@@ -44,14 +46,26 @@ if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('--config', type=str, required=True)
     parser.add_argument('--target_speaker', type=str, required=True)
-    parser.add_argument('--gpu', type=int, default=0)
+    parser.add_argument('--model_name', type=str, required=True)
+    #parser.add_argument('--gpu', type=int, default=0)
     args=parser.parse_args()
 
-    #torch.set_default_device("cuda:"+str(args.gpu))
+    #print(torch.cuda.device_count())
+    #print(torch.cuda.get_device_name())
+    #print(torch.cuda.get_device_capability())
+    best_gpu = check_gpu.get_free_gpu()
+    #print(best_gpu)
+    if best_gpu is not None and torch.cuda.is_available():
+        device = torch.device(f"cuda:{best_gpu}")
+        print(f"最も空きメモリの大きいGPUを選択: {device}")
+    else:
+        device = torch.device("cpu")
+        print("GPUが見つからなかったため、CPUを使用します")
     torch.set_float32_matmul_precision('high')
     with open(args.config, 'r') as yf:
         config = yaml.safe_load(yf)
 
     if 'config' in config.keys():
         config = config['config']
-    train(config, args.target_speaker, model)
+    config['logger']['name'] = args.model_name
+    train(config, args.target_speaker)

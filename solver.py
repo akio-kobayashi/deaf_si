@@ -8,17 +8,17 @@ from einops import rearrange
 from model import SIModel
 
 class LightningSolver(pl.LightningModule):
-    def __init__(self, config:dict, model) -> None:
+    def __init__(self, config:dict) -> None:
         super().__init__()
 
         self.optim_config=config['optimizer']
 
-        self.model = SIModel(config[model])
+        self.model = SIModel(config['model'])
         self.loss = nn.MSELoss()
         self.save_hyperparameters()
 
-    def forward(self, wave:Tensor) -> Tensor:
-        return self.model(wave)
+    def forward(self, wave:Tensor, lengths:list) -> Tensor:
+        return self.model(wave, lengths)
 
     def compute_loss(self, estimates, targets, valid=False):
         d={}
@@ -33,21 +33,21 @@ class LightningSolver(pl.LightningModule):
         return _loss
 
     def training_step(self, batch, batch_idx:int) -> Tensor:
-        waves, targets = batch
-        estimates = self.forward(waves)
+        waves, lengths, targets = batch
+        estimates = self.forward(waves, lengths)
         _loss = self.compute_loss(estimates, targets, valid=False)
 
         return _loss
 
     def validation_step(self, batch, batch_idx, dataloader_idx=0):
-        waves, targets = batch
-        estimates = self.forward(waves)
+        waves, lengths, targets = batch
+        estimates = self.forward(waves, lengths)
         _loss = self.compute_loss(estimates, targets, valid=True)
 
         return _loss
 
 
     def configure_optimizers(self):
-        optimizer = torch.optim.Adam(self.parameters(),
+        optimizer = torch.optim.AdamW(self.parameters(),
                                      **self.optim_config)
         return optimizer

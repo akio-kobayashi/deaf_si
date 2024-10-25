@@ -1,21 +1,22 @@
 # 学習データの保存場所
-csv: 'your_training_data-path'
+csv: '/home/akio/deaf_si/merge.csv'
 # DataLoaderのパラメータ
-batch_size: 8
+batch_size: 1
 num_workers: 1
 # 学習時のパラメータ
 trainer:
   accelerator: 'auto'
   accumulate_grad_batches: 5
-  max_epochs: 50
-  precision: '16-mixed'
+  max_epochs: 200
+  #precision: '16-mixed'
   profiler: 'simple'
   gradient_clip_val: 5.
 optimizer:
   lr: 1.e-4
+  weight_decay: 1.e-3
 # ログの保存場所
 logger:
-  save_dir: './'
+  save_dir: './si_model/'
   version: 1
   name: 'your-model-name'
 # 中間モデルの保存
@@ -27,6 +28,12 @@ checkpoint:
   mode: 'min'
   every_n_epochs: 1
 model:
-  lora_attention_dim: 8
-  lora_alpha: 32
+  input_dim: 1024
+  output_dim: 256
+  hidden_dim: 256
+  proj_dim: 128
+  num_layers: 1
+  dropout: 0.0 # 0.0 if num_layers=1
+  lora_attention_dim: 32
+  lora_alpha: 16
   lora_dropout: 0.1
