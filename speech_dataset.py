@@ -14,8 +14,9 @@ from einops import rearrange
 from argparse import ArgumentParser
 
 class SpeechDataset(torch.utils.data.Dataset):
+    value2class = {'1.0':0, '1.5':1, '2.0':2, '2.5':3, '3.0':4, '3.5':5, '4.0':6, '4.5':7, '5.0':8}
 
-    def __init__(self, csv_path:str, target_speaker:str, sample_rate=16000, train_df=None) -> None:
+    def __init__(self, csv_path:str, target_speaker:str, sample_rate=16000, train_df=None, loss_type='mse') -> None:
         super().__init__()
 
         self.df = None
@@ -31,6 +32,8 @@ class SpeechDataset(torch.utils.data.Dataset):
             self.df = pd.read_csv(csv_path).query('speaker!=@target_speaker')
             self.df = self.df.merge(train_df, on=['path', 'speaker', 'intelligibility'], how='outer', indicator=True).query('_merge == "left_only"').drop('_merge', axis=1)
 
+        self.loss_type = loss_type
+
     def get_df(self):
         return self.df
     
@@ -44,7 +47,11 @@ class SpeechDataset(torch.utils.data.Dataset):
         row = self.df.iloc[idx]
         # audio path
         path = row['path']
-        intelligiblity = (float(row['intelligibility']) - self.mean)/self.std
+        value=0
+        if self.loss_type == 'kappa':
+            value = SpeechDataset.value2class[row['intelligibility']]
+        else:
+            value = (float(row['intelligibility']) - self.mean)/self.std
 
         try:
             # torchaudioで読み込んだ場合，音声データはFloatTensorで（チャンネル，サンプル数）
@@ -59,7 +66,7 @@ class SpeechDataset(torch.utils.data.Dataset):
         except:
             raise RuntimeError('file open error')
                
-        return wave, length, intelligiblity
+        return wave, length, value, self.loss_type
 
 '''
     バッチデータの作成
@@ -67,13 +74,15 @@ class SpeechDataset(torch.utils.data.Dataset):
 def data_processing(data:Tuple[Tensor,int]) -> Tuple[Tensor, Tensor]:
     waves = []
     lengths = []
-    intelligibilities = []
+    values = []
 
-    for wave, length, intelligibility in data:
+    loss_type = 'kappa'
+    for wave, length, value, _type in data:
         # w/ channel
         waves.append(wave.t())
         lengths.append(length//320-1) # wav2vec2 outout length
-        intelligibilities.append(intelligibility)
+        loss_type=_type
+        values.append(value)
 
     # データはサンプル数（長さ）が異なるので，長さを揃える
     # 一番長いサンプルよりも短いサンプルに対してゼロ詰めで長さをあわせる
@@ -84,9 +93,12 @@ def data_processing(data:Tuple[Tensor,int]) -> Tuple[Tensor, Tensor]:
     #packed = nn.utils.rnn.pack_padded_sequence(waves.unsqueeze(-1).float(), lengths, batch_first=True, enforce_sorted=False)
 
     # 話者のインデックスを配列（Tensor）に変換
-    intelligibilities = torch.from_numpy(np.array(intelligibilities)).clone().float()
+    if loss_type == 'kappa':
+        values = torch.from_numpy(np.array(values)).clone().int()
+    else:
+        values = torch.from_numpy(np.array(intelligibilities)).clone().float()
 
-    return waves, None, intelligibilities
+    return waves, None, values
 
 if __name__ == '__main__':
     import argparse

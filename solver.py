@@ -6,6 +6,7 @@ import pytorch_lightning as pl
 from typing import Tuple
 from einops import rearrange
 from model import SIModel
+from loss_func import WeightedKappaLoss
 
 class LightningSolver(pl.LightningModule):
     def __init__(self, config:dict) -> None:
@@ -13,9 +14,15 @@ class LightningSolver(pl.LightningModule):
 
         self.optim_config=config['optimizer']
 
-        self.model = SIModel(config['model'])
-        #self.loss = nn.MSELoss()
-        self.loss = nn.HuberLoss(delta=1.0)
+        if config['loss']['type'] == 'kappa':
+            self.model = SIModel(config['model'], 9)
+            self.loss = WeightedKappaLoss(num_classes=9)
+        else:
+            self.model = SIModel(config['model'])
+            if config['loss']['type'] == 'mse':
+             self.loss = nn.MSELoss()
+            else:
+                self.loss = nn.HuberLoss(config['loss']['delta'])
         self.save_hyperparameters()
 
     def forward(self, wave:Tensor, lengths:list) -> Tensor:

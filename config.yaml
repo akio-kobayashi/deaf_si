@@ -27,6 +27,9 @@ checkpoint:
   save_top_k: 1
   mode: 'min'
   every_n_epochs: 1
+loss:
+  type: 'kappa' # 'mse', 'huber', 'kappa'
+  delta: 0.5
 model:
   input_dim: 1024
   output_dim: 256

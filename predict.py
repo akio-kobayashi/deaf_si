@@ -16,6 +16,9 @@ warnings.filterwarnings('ignore')
 
 def predict(config:dict, target_speaker, output_csv):
 
+    value2class = {'1.0':0, '1.5':1, '2.0':2, '2.5':3, '3.0':4, '3.5':5, '4.0':6, '4.5':7, '5.0':8}
+    class2value = {v: k for k, v in value2class.items()}
+
     lite = LightningSolver.load_from_checkpoint(config['checkpoint_path'], strict=False, config=config).cuda()
     lite.eval()
 
@@ -23,18 +26,29 @@ def predict(config:dict, target_speaker, output_csv):
     files, intelligiblities = [], [] 
     with torch.no_grad():
         df = pd.read_csv(config['csv']).query('speaker==@target_speaker')
+
+        mean, std = 0., 1.
+        if config['loss']['type'] != 'kapp':
+            mean = df['intelligibility'].mean()
+            std = df['intelligibility'].std()
+
         for idx, row in df.iterrows():
             wave, sr = torchaudio.load(row['path'])
             std, mean = torch.std_mean(wave, dim=-1)
             wave = (wave - mean)/std
             wave = rearrange(wave, '(b c) t -> b c t', b=1)
             pred = lite.forward(wave.cuda())
-            predicts.append(pred.item())
-            targets.append(float(row['intelligibility']))
-
+            if config['loss']['type'] != 'kappa'
+                unnorm = pred.item() * std + mean
+                predicts.append(unnorm)
+                targets.append(float(row['intelligibility']))
+            else:
+                _mx = torch.argmax(pred).item()
+                predicts.append(class2value(_mx))
+                targets.append(row['intelligibility'])
             files.append(row['path'])
             
-    output_df = pd.DataFrame.from_dict({'path': files, 'intelligibility': intelligiblities})
+    output_df = pd.DataFrame.from_dict({'path': files, 'predict': predicts, 'target': targets})
     output_df.to_csv(output_csv)
 
 if __name__ == '__main__':
