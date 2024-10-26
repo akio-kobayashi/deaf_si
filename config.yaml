@@ -1,7 +1,7 @@
 # 学習データの保存場所
 csv: '/home/akio/deaf_si/merge.csv'
 # DataLoaderのパラメータ
-batch_size: 1
+batch_size: 4
 num_workers: 1
 # 学習時のパラメータ
 trainer:
