@@ -49,7 +49,7 @@ class SpeechDataset(torch.utils.data.Dataset):
         path = row['path']
         value=0
         if self.loss_type == 'kappa':
-            value = SpeechDataset.value2class[row['intelligibility']]
+            value = SpeechDataset.value2class[str(row['intelligibility'])]
         else:
             value = (float(row['intelligibility']) - self.mean)/self.std
 
@@ -94,7 +94,7 @@ def data_processing(data:Tuple[Tensor,int]) -> Tuple[Tensor, Tensor]:
 
     # 話者のインデックスを配列（Tensor）に変換
     if loss_type == 'kappa':
-        values = torch.from_numpy(np.array(values)).clone().int()
+        values = torch.from_numpy(np.array(values)).clone().to(torch.int64)
     else:
         values = torch.from_numpy(np.array(intelligibilities)).clone().float()
 
