@@ -30,12 +30,12 @@ checkpoint:
 loss:
   type: 'kappa' # 'mse', 'huber', 'kappa'
   delta: 0.5
-  mode: 'linear'
+  mode: 'quadtratic'
 model:
   input_dim: 1024
   output_dim: 256
   hidden_dim: 256
-  proj_dim: 128
+  proj_dim: 256
   num_layers: 1
   dropout: 0.0 # 0.0 if num_layers=1
   lora_attention_dim: 32

@@ -28,7 +28,7 @@ def predict(config:dict, target_speaker, output_csv):
         df = pd.read_csv(config['csv']).query('speaker==@target_speaker')
 
         mean, std = 0., 1.
-        if config['loss']['type'] != 'kapp':
+        if config['loss']['type'] != 'kappa':
             mean = df['intelligibility'].mean()
             std = df['intelligibility'].std()
 

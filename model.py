@@ -45,10 +45,15 @@ class SIModel(nn.Module):
         super().__init__()
         self.w2v = W2VModel(config)
         self.linear1 = nn.Linear(config['input_dim'], config['output_dim'])
-        self.lstm = nn.LSTM(config['output_dim'], config['hidden_dim'], num_layers=config['num_layers'],
+        if config['proj_dim'] < config['hidden_dim']:
+            self.lstm = nn.LSTM(config['output_dim'], config['hidden_dim'], num_layers=config['num_layers'],
                                 batch_first=True, dropout=config['dropout'], bidirectional=True, proj_size=config['proj_dim'])
-        self.linear2 = nn.Linear(config['proj_dim']*config['num_layers']*2, output_dim)
-
+            self.linear2 = nn.Linear(config['proj_dim']*config['num_layers']*2, output_dim)
+        else:
+            self.lstm = nn.LSTM(config['output_dim'], config['hidden_dim'], num_layers=config['num_layers'],
+                                batch_first=True, dropout=config['dropout'], bidirectional=True)
+            self.linear2 = nn.Linear(config['hidden_dim']*config['num_layers']*2, output_dim)
+            
     def forward(self, x, lengths=None):
         y = self.w2v(x)
         z = [ rearrange(x, '(b c) t f -> b c t f', c=1) for x in y.hidden_states ]
