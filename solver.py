@@ -16,7 +16,7 @@ class LightningSolver(pl.LightningModule):
 
         if config['loss']['type'] == 'kappa':
             self.model = SIModel(config['model'], 9)
-            self.loss = WeightedKappaLoss(num_classes=9)
+            self.loss = WeightedKappaLoss(num_classes=9, mode=config['loss']['mode'])
         else:
             self.model = SIModel(config['model'])
             if config['loss']['type'] == 'mse':

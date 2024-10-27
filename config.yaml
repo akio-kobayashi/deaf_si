@@ -30,6 +30,7 @@ checkpoint:
 loss:
   type: 'kappa' # 'mse', 'huber', 'kappa'
   delta: 0.5
+  mode: 'linear'
 model:
   input_dim: 1024
   output_dim: 256
