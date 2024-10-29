@@ -60,7 +60,8 @@ class SIModel(nn.Module):
         z = torch.cat(z, axis=1)
         z = torch.mean(self.linear1(z), axis=1) # b t f
         if lengths is not None:
-            z = torch.nn.utils.rnn.pack_padded_sequence(z, lengths, batch_first=True, enforce_sorted=False)
+            z = torch.nn.utils.rnn.pack_padded_sequence(z, lengths.cpu(), batch_first=True,
+                                                        enforce_sorted=False)
         o, (z, _) = self.lstm(z)
         if lengths is not None:
             o, output_shape = torch.nn.utils.rnn.pad_packed_sequence(o, batch_first=True)

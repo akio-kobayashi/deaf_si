@@ -16,7 +16,7 @@ def train(config:dict, target_speaker):
 
     lite = LightningSolver(config)
        
-    train_dataset = SpeechDataset(csv_path=config['csv'], target_speaker=target_speaker, loss_type=config['loss']['type'])
+    train_dataset = SpeechDataset(csv_path=config['csv'], target_speaker=target_speaker, loss_type=config['loss']['type'], return_length=config['return_length'])
     train_loader = data.DataLoader(dataset=train_dataset,
                                    batch_size=config['batch_size'],
                                    num_workers=1,
@@ -24,7 +24,7 @@ def train(config:dict, target_speaker):
                                    shuffle=True, 
                                    collate_fn=lambda x: data_processing(x))
     train_df = train_dataset.get_df()
-    valid_dataset = SpeechDataset(csv_path=config['csv'], target_speaker=target_speaker, train_df=train_df, loss_type=config['loss']['type'])
+    valid_dataset = SpeechDataset(csv_path=config['csv'], target_speaker=target_speaker, train_df=train_df, loss_type=config['loss']['type'], return_length=config['return_length'])
     valid_loader = data.DataLoader(dataset=valid_dataset,
                                    batch_size=config['batch_size'],
                                    num_workers=1,

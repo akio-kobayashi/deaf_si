@@ -11,8 +11,9 @@ trainer:
   #precision: '16-mixed'
   profiler: 'simple'
   gradient_clip_val: 5.
+return_length: False
 optimizer:
-  lr: 1.e-4
+  lr: 4.0e-5 #1.e-4
   weight_decay: 1.e-3
 # ログの保存場所
 logger:

@@ -16,7 +16,7 @@ from argparse import ArgumentParser
 class SpeechDataset(torch.utils.data.Dataset):
     value2class = {'1.0':0, '1.5':1, '2.0':2, '2.5':3, '3.0':4, '3.5':5, '4.0':6, '4.5':7, '5.0':8}
 
-    def __init__(self, csv_path:str, target_speaker:str, sample_rate=16000, train_df=None, loss_type='mse') -> None:
+    def __init__(self, csv_path:str, target_speaker:str, sample_rate=16000, train_df=None, loss_type='mse', return_length='True') -> None:
         super().__init__()
 
         self.df = None
@@ -33,6 +33,7 @@ class SpeechDataset(torch.utils.data.Dataset):
             self.df = self.df.merge(train_df, on=['path', 'speaker', 'intelligibility'], how='outer', indicator=True).query('_merge == "left_only"').drop('_merge', axis=1)
 
         self.loss_type = loss_type
+        self.return_length = return_length
 
     def get_df(self):
         return self.df
@@ -65,7 +66,10 @@ class SpeechDataset(torch.utils.data.Dataset):
             length = wave.shape[-1]
         except:
             raise RuntimeError('file open error')
-               
+
+        if self.return_length is False:
+            length = -1
+            
         return wave, length, value, self.loss_type
 
 '''
@@ -80,7 +84,8 @@ def data_processing(data:Tuple[Tensor,int]) -> Tuple[Tensor, Tensor]:
     for wave, length, value, _type in data:
         # w/ channel
         waves.append(wave.t())
-        lengths.append(length//320-1) # wav2vec2 outout length
+        if length > 0:
+            lengths.append(length//320-1) # wav2vec2 outout length
         loss_type=_type
         values.append(value)
 
@@ -89,7 +94,7 @@ def data_processing(data:Tuple[Tensor,int]) -> Tuple[Tensor, Tensor]:
     # バッチはFloatTensorで（バッチサイズ，チャンネル，サンプル数）
     waves = nn.utils.rnn.pad_sequence(waves, batch_first=True)
     waves = rearrange(waves, 'b t c -> b (t c)')
-    #lengths = torch.tensor(lengths)
+    lengths = torch.tensor(lengths).to(torch.int64)
     #packed = nn.utils.rnn.pack_padded_sequence(waves.unsqueeze(-1).float(), lengths, batch_first=True, enforce_sorted=False)
 
     # 話者のインデックスを配列（Tensor）に変換
@@ -98,7 +103,10 @@ def data_processing(data:Tuple[Tensor,int]) -> Tuple[Tensor, Tensor]:
     else:
         values = torch.from_numpy(np.array(intelligibilities)).clone().float()
 
-    return waves, None, values
+    if len(lengths) == 0:
+        lengths = None
+        
+    return waves, lengths, values
 
 if __name__ == '__main__':
     import argparse

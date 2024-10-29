@@ -36,15 +36,19 @@ def predict(config:dict, target_speaker, output_csv):
             wave, sr = torchaudio.load(row['path'])
             std, mean = torch.std_mean(wave, dim=-1)
             wave = (wave - mean)/std
-            wave = rearrange(wave, '(b c) t -> b c t', b=1)
-            pred = lite.forward(wave.cuda())
-            if config['loss']['type'] != 'kappa'
+            if config['return_length'] is True:
+                lengths = torch.tensor([wave.shape[-1]]).to(torch.int64)
+            else:
+                lengths = None
+            #wave = rearrange(wave, '(b c) t -> b c t', b=1)
+            pred = lite.forward(wave.cuda(), lengths)
+            if config['loss']['type'] != 'kappa':
                 unnorm = pred.item() * std + mean
                 predicts.append(unnorm)
                 targets.append(float(row['intelligibility']))
             else:
                 _mx = torch.argmax(pred).item()
-                predicts.append(class2value(_mx))
+                predicts.append(class2value[_mx])
                 targets.append(row['intelligibility'])
             files.append(row['path'])
             
