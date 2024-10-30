@@ -6,6 +6,6 @@ for target_speaker in BF026  BF070  BM082  F002  F005  F008  F013  F016  F020  M
 			     F010  F015  F019  M002  M005  M008  M011  M014  M017  M024;
 do
     echo $target_speaker
-    #python3 train.py --config config.yaml --target_speaker $target_speaker --model_name $target_speaker
+    python3 train.py --config config.yaml --target_speaker $target_speaker --model_name $target_speaker
 done
 		      
