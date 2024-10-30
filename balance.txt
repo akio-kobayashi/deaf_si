@@ -1,0 +1,503 @@
+A01 a r a y u r u g e N j i ts u o s u b e t e j i b u N n o h o: e n e j i m a g e t a n o d a
+A02 i Q sh u: k a N b a k a r i ny u: y o: k u o sh u z a i sh i t a
+A03 t e r e b i g e: m u y a p a s o k o N d e g e: m u o sh i t e a s o b u
+A04 b u Q k a n o h e N d o: o k o: ry o sh i t e ky u: f u s u i j u N o k i m e r u h i ts u y o: g a a r u
+A05 ky u: ky u: sh a g a j u: b u N n i u g o k e z u ky u: j o s a gy o: g a o k u r e t e i r u
+A06 g e N r o N n o j i y u: w a i Q p o y u z u r e b a hy a Q p o m o s e N p o m o s e m e k o m a r e r u
+A07 k a i j o: n o sh u: h e N n i w a h a r a j u k u e k i y a y o y o g i e k i m o a r u sh i ch o Q t o a r u k e b a sh i N j u k u gy o e N e k i m o a r u
+A08 r o: j i N h o: m u n o b a: i w a k e N k o: k i g u y a h i z a k a k e d a
+A09 ch o Q t o o s o i ch u: sh o k u o t o r u t a m e f a m i r i: r e s u t o r a N n i h a i Q t a n o d e s u
+A10 u r e sh i: h a z u g a y u Q k u r i n e t e m o i r a r e n a i
+A11 sh i z e N n o k e N ky u: sh a w a sh i z e N o n e j i f u s e y o: t o sh i t e w a i k e n a i
+A12 o g o r i o s u t e k e N ky o n a sh i s e: o t o r i m o d o s a n e b a f u y u w a s u g o s e n a i
+A13 s e N d a Q t e g o k u t a N k i k a N d a g a h i s a k a t a b u r i n i y o: r o Q p a e i Q t a
+A14 sh i k a sh i k o n o p u r o y a ky u: b u: m u m o e: ky u: n i ts u z u k u t o w a k a g i r a n u
+A15 o ky a k u s a N w a s o r e j a r e N sh u: s a e s u r e b a d a r e n i d e m o d e k i r u N j a n a i k a n a Q t e k a N g a e h a j i m e r u y o
+A16 a f u r i k a j i N w a j i ts u n i t a k u m i n i py u N t o ts u b a o h a k u
+A17 z e N sh a o f u h e N b u N k a t o y o b i k o: sh a o k o b e ts u b u N k a t o y o b u k o t o n i s u r u
+A18 o j i s a N w a m i s a k i n o i Q k e N y a n i h i t o r i b o Q ch i d e s u N d e i t a
+A19 r i Q sh u N g a s u g i t e m o k i b i sh i: s a m u s a n o h i b i g a ts u z u k u
+A20 o: m u k a sh i n o f i r i p i N n i w a y u t a k a n a t o ch i g a a Q t a
+A21 ry o k a N y a h o t e r u n i ts u k u t o h i j o: g u ch i o t a z u n e r u
+A22 y a r u b e k i k o t o w a y a Q t e o r i n a N r a o ch i d o w a n a i
+A23 w a t a sh i w a u w a g i o n u g i i sh i g u m i n o u e n i ry o: t e o ts u i t e u ts u b u s e n i n a Q t a
+A24 g a i j i N s a N w a k a N p e k i sh u g i d e a r u
+A25 n i N g e N t o w a b i my o: d e f u k u z a ts u n a i k i m o n o d e a r u
+A26 k o k o i Q k a g e ts u w a h o t o N d o f u m i N f u ky u: n o t e ts u y a ts u z u k i d e m e g a h a r e a g a Q t e i r u
+A27 g o z e N h a ch i j i k e N k o: n a h o ry o w a s a gy o: j o e t o r a Q k u d e sh u Q p a ts u s u r u
+A28 m i a g e r u f u j i m o i: g a r o j i u e m a t a h a ch i u e n o h a n a m o k i r e i d e s u
+A29 h a h a w a n o: k e Q s e N n o k o: i sh o: d e r o: j i N s e: ch i h o: sh o: n i n a r i i ch i n e N m a e k a r a ny u: i N ch u: d e s u
+A30 p a j a m a t o t i: sh a ts u g a m e k u r e t e u s u i r o Q k o ts u n o sh i t a n i p e ch a N k o n o h a r a g a m i e t a
+A31 m a t a e r i y a s o d e g u ch i p o k e Q t o g u ch i n a d o g a a b u r a y o g o r e d e h e N sh o k u o o k o s u k o t o m o a r i m a s u
+A32 ch a k u y o: ch u: n i d a u N y a f e z a: g a t o b i d a s u g e N i N t o m o n a r i m a s u
+A33 i N t a by u: w a g o g o j u: j i k a r a h a j i m a r i t o ch u: d e y u: sh o k u o h a s a m i e N e N y o j i k a N n i o y o N d a
+A34 k o: k a o i s o g u a m a r i n o k a d o n o r e N sh u: w a s a k e u o: m i N g u a Q p u m o n e N i r i n i y a r i m a sh o:
+A35 d e sh i n i u d e o s a s a e r a r e n a g a r a s a i g o m a d e h i k i ts u z u k e t a
+A36 k i k a N sh i z e N s o k u y a b i e N m o h i r o m a Q t e i r u
+A37 d a i p i r a m i Q d o ch i k a k u n i f u t a ts u n o h e y a g a u m a Q t e i t a n o d e a r u
+A38 f u ts u: ch u: ky o r i t o r a Q k u n o d o r a i b a: w a ch u: n e N n o h i t o g a o: i
+A39 j i d o: sh a y a s e: m i ts u k i k a i n a d o d e g i j u ts u k e: n o s a i y o: o o s a e r u t o k o r o g a m e d a ch i u r i t e sh i j o: n o g i j u ts u k e: n i m o k a g e r i g a m i e h a j i m e t a
+A40 y u: z a: n i m o s e k i n i N g a a r u t o n o r o N r i w a b o: r o N t o i w a z a r u o e m a s e N
+A41 h o N sh o w a k o t o b a n o s e: j i j i N r u i g a k u t o i Q t e m o y o i
+A42 f u sh i m e n i a w a s e t e h o N k a i g i j o: o h a N b u N n i ch o N g i r u t o s u r u k a
+A43 sh u sh o: m i z u k a r a k o k u m i N h i t o r i h i t o r i hy a k u d o r u h a k u r a i h i N o k a u y o: n i s u s u m e t a
+A44 j u Q sh i N h o: w a ry o: t e n o j u Q p o N n o y u b i o k a z o e r u k o t o k a r a o k o Q t a
+A45 w a i N t o n i h o N sh u t o o t o w a z u g e N s a N ch i s e: b u N hy o: j i o i s o g u b e k i d e w a n a i k a
+A46 n e N r e: w a m a d a j u: y o N d a g a k a z o e k i r e n u h o d o n i Q p o N n o b u t a i o f u N d a n o d e n i Q p o N g o w a p e r a p e r a d a s o: d a
+A47 n i Q p o N n o e s u p e r a N t o t o sh i t e y a h a r i hy o: j u N g o w a h i ts u y o: d a
+A48 y o k u n e N ch i ch i n o s e N ky o o t e ts u d a Q t e y u: z e i a N gy a n o m a n e: j a: o ts u t o m e t a
+A49 n a n i m o k a m o g a t a ch i m a ch i k u s a r i sh i m o N d e y o g o r e g u ny a g u ny a n i n a Q t e sh i m a u y o: d a
+A50 gy a Q ky o: n i t a e t a k o n o p u r o dy u: s a: n o s a k u h i N n i w a hy u: m a n i z u m u g a my a k u my a k u t o i k i z u i t e i r u
+B01 y o b o: y a k e N k o: k a N r i r i h a b i r i t e: sh o N n o t a m e n o s e: d o o j u: j i ts u sh i t e i k u h i ts u y o: g a a r o:
+B02 r o: ny a k u n a N ny o g a h i o k a k o N d e n o m i t e o ts u n a i d e u t a u
+B03 d e g u ch i n o n a i h i k o: ch u: n o k o: k u: k i n o i h e N w a ky o: f u n o ky o k u g e N j o: ky o: t o i Q t e y o i
+B04 w a z u k a n a sh u: ny u: o y a r i k u r i sh i t e g e N k i N d e s a: b i s u o r i y o: sh i t e i r u
+B05 m u z u k a sh i: sh o k u j i ry o: h o: k a r a g e r i n o s e w a m a d e n i j u: y o j i k a N k a i g o n o h i b i g a ts u z u i t a
+B06 t a o r e t e d o: r o o f u s a g u o s o r e g a a r u b u r o Q k u b e: y a i sh i b e: o t e N k e N sh i k a i z e N sh i t e o k u
+B07 ts u i d e z a i m u sh o: g a s e N m o N k a o a ts u m e t e g u t a i a N o n e Q t a
+B08 k o: y u: e g a y a s u y a s u t o k a k e r u h a z u w a n a i
+B09 s e n o t a k a s a w a hy a k u n a n a j u Q s e N ch i h o d o d e m e g a o: k i k u y a y a f u t o Q t e i r u
+B10 n a ts u k a sh i: p u r o p e r a k i d e f u w a r i f u w a r i t o ch i ky u: o i Q sh u: sh i t a t o k o r o g a s u b a r a sh i:
+B11 y o h o d o g u a i g a w a r u k u n a k e r e b a h i r u m a y o k o n i n a r u n a N t e y u m e n o m a t a y u m e d a
+B12 ky o: f u: t o h i e k o m i n o ts u y o i j i N g u: n o g u r a u N d o d e a r u
+B13 b u r a b u r a t o ky u: j o: m a d e j u Q p u N t a r a z u n o m i ch i o a r u i t e i k u
+B14 o: g o e o d a sh i s u g i t e k a s u r e g o e n i n a Q t e sh i m a u
+B15 t a sh i z a N h i k i z a N w a d e k i n a k u t e m o e w a k a k e r u
+B16 s o r e o k a b a o: t o sh i t e m i g i h i z a t o f u k u r a h a g i o y a r a r e t a
+B17 g e N ch i n i ts u i t e i z a t o y u: t o k i o b u Q t e k u r e r u g e N j u: m i N o t a n o N d a g a k o r e g a p i g u m i: d e a Q t a
+B18 y u r a y u r a d e N ky u: g a y u r e t e k a g e g a k u s a n o u e o ch i r a ch i r a sh i t a
+B19 b o k u w a h o t o N d o m u ch u: d e e k i m a e n o h i t o g o m i n o a i d a o s u r i n u k e t a
+B20 k o n o y o r o k o b i w a m u r o N i e e k a e r i ts u i t e m o k i e z u n i ts u z u i t a
+B21 d o n o h e y a n o i sh o: n i m o a s o b i g o k o r o g a a f u r e t e i t e t a n o sh i:
+B22 t o b u j i y u: o e r u k o t o w a j i N r u i n o y u m e d a Q t a
+B23 s o d a ch i n o y o i b o Q ch a N n o y o s a t o gy a Q ky o: n i s o d a Q t a n i N g e N n o ts u y o s a
+B24 h a j i m e t e r u: b u r u b i j u ts u k a N e h a i Q t a n o w a j u: y o n e N m a e n o k o t o d a
+B25 j i b u N n o j i ts u ry o k u w a j i b u N g a i ch i b a N y o k u sh i Q t e i r u h a z u d a
+B26 ch a i r o n o m e w a ny u: w a n a k a g a y a k i o o b i t e i t a
+B27 i m a ry u: k o: n o t a N sh i N f u n i N z o k u n o s a b i sh i s a o ch o Q p i r i a j i w a w a s e t e m o r a Q t a n o m o y u: i g i n a t a i k e N d a
+B28 y a h a r i m u hy o: j o: n o m a m a n a n i m o k o t o b a g a a r i m a s e N
+B29 i k i t a j u N k a ts u y u d e s u
+B30 k a r e n o s u: g a k u n o j u gy o: w a b a ts u g u N n i o m o sh i r o k u sh i k e N m a e n i w a g e Q ky u: g a i h o sh u: j u gy o: o s u r u h o d o n e Q sh i N d e a r u
+B31 s o: d e n a k u t e m o s u sh i y a n o sh o k u n i N w a h e r a z u g u ch i o k i k i t a g a r u n i N g e N g a o: i
+B32 r i: d o g a o: k i k e r e b a k e N s e: ky u: o n a g e n a k e r e b a n a r a n a i
+B33 a m e r i k a g a k a z e o h i k e b a n i Q p o N m o k u sh a m i o s u r u t o i w a r e r u h o d o d e n i Q p o N k e: z a i m o f u ky o: d e s u
+B34 r a Q p a m o n a r a n a i sh i f u e m o n a r a n a i g a z o r o z o r o t o o k i d a sh i s e N m e N j o e y u k u
+B35 sh u j i N n i a m a e sh a k a i n i a m a e j i b u N n i a m a e t e n u r u m a y u n i d o Q p u r i h i t a Q t e i r u
+B36 f u n e w a h i s o k a n i y u r e ts u ts u i k a r i o h i k i z u Q t e n a g a r e ts u z u k e t a
+B37 k o r e m a d e sh o: n e N y a ky u: m a m a s a N b a r e: n a d o ch i: k i s u p o: ts u o s a s a e sh i m i N n i m i Q ch a k u sh i t e k i t a n o w a m u s u: n o b o r a N t i a d a Q t a
+B38 m o ch i r o N ch o: s a g o w a m o t o d o: r i m i Q p e: s u r u
+B39 r e: b o: d e w a h i e s u g i g a m o N d a i n i n a r u
+B40 i z u r e w a h a w a i y a k a r i f o r u n i a n a d o n i Q p o N j i N g a o: k u s u m u a ts u i t o ch i d e s o d a t e t e m i t a i
+B41 s a i k i N n o f u ch o: o r i y u: n i s o: r u g o r i N k o: h o s e N sh u k a r a h a z u s u k o t o o h a Q py o: sh i t a
+B42 j i k o n o ch o k u s e ts u g e N i N t o n a Q t a a ts u ry o k u k a k u h e k i n o z u s a N n a sh u: r i s o n o z u s a N s a o m i o t o sh i t a ch e Q k u sh i s u t e m u n a d o g a s o: d a
+B43 j o s e: t o w a gy a k u d e n a N t o k a j o: sh i k i o y a b u Q t e m e d a Q t e y a r o: t o i k i g o m u h i t o g a h o t o N d o d a
+B44 m o Q t o h i r o i g i j o: o t o y u: k o e m o a Q t a g a ch a: ch i r u sh u sh o: g a o s a e t a
+B45 g i N z a k e n o t a m a g o o y u ny u: sh i t e f u k a s a s e k a i ch u: d e s o d a t e r u y o: sh o k u m o h a j i m a Q t e i r u
+B46 b u N sh o w a n e N n e N f u e t e i k u
+B47 o sh a r e t o w a e N g a n a k u j i: p a N n i t i: sh a ts u j a N p a: t o i Q t a k a Q k o: d e e k i m a d e j i t e N sh a o h a sh i r a s e r u
+B48 n e ts u d e u r u N d a a o i s o r a n i s e k i r a N u N g a a r u
+B49 f u sh a w a h i N j a t o o n a j i e: y o: j o: t a i n i o ch i k o m i h i N j a w a g a sh i m a d e a t o i Q p o t o i u j o: t a i e o ch i k o N d e i k u
+B50 h a N b a i k a N k e: n o k i gy o: n o d a i hy o: sh a w a s e m i n a: sh u: ry o: g o k a i g i sh i ts u n i a ts u m a r e
+C01 r o Q py a k u n i N n o o ky a k u s a N n o h i t o i k i r e n i m u sh i a ts u k u t e s e N s u o ts u k a w a z u n i i r a r e n a i
+C02 y a g a t e sh o: k o n o sh o r u i y a b u Q p i N g a o: sh u: s a r e sh o k u N w a t o r i sh i r a b e n o t a m e k o k u z e: ky o k u e r e N k o: s a r e r u
+C03 s a i sh o h a y a i t e N p o d e m a k i k o N d e o i t e ch u: b a N j i Q k u r i m i s e r u
+C04 b u N g e: h e N sh u: sh a t o sh i t e w a s a Q k a t a ch i n i m o Q t o m o sh i N r a i s a r e t e i r u m e: h e N sh u: sh a d a
+C05 a n o s a k a o n o b o r e b a u m i g a m i e r u
+C06 e n e r u g i: o s e ts u y a k u s u r u t a m e n o g i j u ts u o k a i h a ts u s u r u k o t o m o t a i s e ts u d e a r u
+C07 s e i k a ts u f u j o i ry o: f u j o j u: t a k u f u j o n a d o n i y o Q t e h i N k o N n i o ch i i Q t a h i t o b i t o o e N j o sh i t e i r u
+C08 k a i h o: w a s u s u m u g a s o n o k o t o d e n i Q p o N n o y u ny u: g a ky u: z o: sh i b o: e k i k u r o j i g a ky u: g e N s u r u t o w a o m o e n a i
+C09 t e n u k i g a a r e b a i i n u n o w a u m a r e n a i
+C10 n o: gy o: o y a m e z a r u o e n a i h i t o g a a r i k a N r e N k i gy o: m o k o n o f u ky o: n i h i k i z u r a r e t e i r u t o i u
+C11 u m i n o o y a w a s a N f u r a N sh i s u k o n i s u m u n i Q k e: j i N t a ch i d a Q t a
+C12 g e N ch i n o h a ts u o N o o m o N j i t e s o: y o b u y o: n i n a Q t a
+C13 s o n o r e Q sh a g a o: g u ch i o a k e t e k o Q k a h i m i ts u h o: o ch i r a ts u k a s e t e i r u
+C14 j u: n e N m a e n i Q p o N n o h i t o r i a t a r i n o j i: d i: p i: w a s e k a i d e j u: r o k u i t e: d o d a Q t a
+C15 m o: m u ch u: n i n a Q t e t a m a n e g i j a g a i m o a r a y u r u y a s a i o k a i k o m u
+C16 g u z u g u z u k a N g a e t e i t a r a s a N j u Q p u N m o f u t o N k a r a d e r a r e n a k a Q t a
+C17 i ch i n e N h o d o m a e k a r a h i s o k a n i ch a o n a r a i h a j i m e t e i r u
+C18 m i z u g a a g a Q t e k i t a r a a t o w a y u Q k u r i t o j o: g e s a s e r e b a y o i
+C19 h i r o i k o: n a i n i r e s u t o r a N y a r e Q sh a sh o k u d o: n a d o o h a i sh i s a Q p o r o b i: r u e N n i n i t a f u N i k i d a
+C20 ch i k a k u n o g e N y a d e j o: b a sh a g e k i sh u ry o: n a d o o t a n o sh i m u k o t o g a d e k i r u
+C21 n i Q p o N j i N n o b i i sh i k i o k e Q t e: z u k e t a n o g a ch a n o y u d a g a ch a sh i ts u n o hy o: j u N w a y o j o: h a N n a k a n i w a i ch i j o: a m a r i t o i u m i n i m o a r u
+C22 sh i k a sh i s o: n a r u t o k a e Q t e n e m u r e z u n e z a k e n o ry o: m o f u e t e y u k u
+C23 z u Q sh i r i t o t e g o t a e n o a r u t a i k e N o ts u m u s e: n e N g a f u e t e h o sh i:
+C24 i ts u g o r o sh o: g i o o b o e t a k a h a Q k i r i sh i n a i
+C25 f u j i N m e: g i n i n a Q t e i r u j u: t a k u n o h a N b u N o w a z a w a z a n o z o i t e k o: hy o: s u r u
+C26 ch a N t o sh i t a b u N sh o: o sh a b e r a z u t a N g o d e m a n i a w a s e r u
+C27 w a t a sh i w a a N sh i N t o a s e r i g a g o ch a m a z e n o f u k u z a ts u n a sh i N ky o: d a
+C28 h o: ch o: n o t e o t o m e t e n a g a r e r u n a m i d a o e p u r o N d e n u g u Q t a n o w a t a m a n e g i n o s e: d a k e d e w a n a i
+C29 w a t a sh i n i w a y a k u s o k u j i k a N g i r i g i r i n i u ch i o d e r u t o i u w a r u i k u s e g a a r u
+C30 h a j i m e w a y o r o k o N d a m i m a i ky a k u o i y a g a r u y o: n i n a Q t a
+C31 ky u: ky u: sh a d e by o: i N n i h a k o b a r e r u t o ch u: n i i k i o h i k i t o Q t a n o d a t o i u
+C32 f u y u g a n a g a k u t e ts u r a k e r e b a s o r e d a k e y o r o k o b i m o o: k i: n o d a
+C33 o N n a n o k o w a i z e N w a p a N y o r i g o h a N g a s u k i d e y o r o k o N d e o k a w a r i o sh i t a
+C34 k o r e w a w a t a sh i y o r i y o h o d o j u: sh o: d e a r u
+C35 h o s o n a g a i y u b i s a k i d e h a g e sh i k u k e N o t a t a k u
+C36 y o: j i w a sh i b a sh i b a f i k u sh o N t o g e N j i ts u t o o k o N d o: s u r u
+C37 sh i N b u N sh u: k a N sh i z a Q sh i n i k a g i r a z u h o t o N d o s u b e t e n o sh u z a i k i sh a w a j i b u N n o y o t e: g e N k o: o m o Q t e y a Q t e k u r u n o d a
+C38 s e k e N t e: o ts u k u r o i t a n i N n o j i b u N e n o hy o: k a y a i N sh o: o i ts u m o k i z u k a u h i t o g a o: i n o m o j i j i ts u d e a r o:
+C39 o s e N w a m o h a y a ch i ky u: k i b o d e a r i j i N r u i w a s o n o sh u n o s o N z o k u s a e a y a u k u s a r e t e i r u n o d a
+C40 j i b u N o m a m o Q t e k u r e r u h i t o g a h o sh i k u t e h i Q sh i d a Q t a
+C41 sh u: ny u: t o w a m u k a N k e: n o b o r a N t i a d e w a a Q t e m o ts u z u k e r u t o k e ts u i sh i t a i j o: f u m i d a s a n e b a n a r a n a i
+C42 g o g o y o j i n o d e N sh a d e k a e r i m a s u k a r a gy u: ny u: o a t a t a m e t e s u i t o: n i i r e u b a g u r u m a n i ts u N d e m u k a e n i i k i m a s u
+C43 sh u j i N n o sh i g o t o w a k e N ch i k u gy o: d e s a gy o: f u k u o k i t e sh u Q k i N sh i m a s u
+C44 k o r e d e w a h a h a o y a g a n a g e k u n o m o m u r i w a a r i m a s e N
+C45 b u r a Q sh i N g u s u r u t o k e b a d a ch i y a s u i n o d e ch u: i g a h i ts u y o: d e s u
+C46 h i r o: k a i f u k u n i w a j u: b u N n a s u i m i N g a h i ts u y o: d a
+C47 p u r e: ch u: t a e z u w a r a i o u k a b e r u k a n o j o n o ts u y o s a b a k a r i g a m e d a Q t a
+C48 n i Q p o N d e m o h a N d o: t a i k a k a k u g a j o: sh o: sh i h a j i m e f u ky o: n i d e g u ch i g a m i e h a j i m e t a
+C49 h a N s e: f u d e m o e n o i Q p a N g a k u s e i i Q p a N sh i m i N n o g o: ry u: o k a d a i hy o: k a s u r u k o t o w a t e k i s e ts u d e w a a r u m a i
+C50 s e m i sh i g u r e n o n a k a o t o: ky o: ch i d o r i g a f u ch i s e N b o ts u sh a b o e N o o t o z u r e t a
+D01 j u Q p u N k a N n o ky u: k e i o a t a e r a r e m i d a r e t a k a m i o y u i n a o sh i k a t a n o a s e o n u g u Q t e sh i t a k u b e y a d e k o ky u: o t o t o n o e r u
+D02 ts u g i n o sh u N k a N b a N z a i b a N z a i n o k o e g a k i k o e t e i t a
+D03 s u p i: ch i g a h e t a n a n o d a k a r a g e N k o: o y o: i sh i t a h o: g a i:
+D04 f u r i a o g u t o s u g u z u j o: o h i k a r i g a h a sh i Q t a
+D05 r o: d o: ry o k u n o j u y o: t o ky o: ky u: n o d e a u b a g a r o: d o: sh i j o: d e a r u
+D06 n i Q p o N g a y u ny u: s u r u sh o k u h i N y a s e k i y u o m a m o r u t a m e n o m o n o n a n o k a
+D07 m i N n a f u k u y a n e k u t a i n o i r o w a y o k u o b o e t e i r u
+D08 b u j i d a Q sh u ts u w a d e k i t e m o i ts u sh i m a n i m o d o r e r u n o k a t o i u f u a N w a ts u z u k u
+D09 sh o: w a j u: n i n e N g o r o t o k u r a b e s a i k i N n o k o: m u i N n o sh o n i N ky u: w a s e N r o Q py a k u b a i n i n a Q t e i r u
+D10 r u s u ch u: n o y u: b i N b u ts u o sh o r i s u r u d a k e d e y u: n i h a N n i ch i w a k a k a r u
+D11 h i ts u j i w a a w a t e t e r e ts u n i m o d o r i f u t a t a b i m u r e t o i Q sh o n i s u s u N d e i k u
+D12 y a Q p a r i i Q sh o: k e N m e: y a r e b a sh i z e N t o k e Q k a w a ts u i t e k u r u
+D13 y o j o: h a N n o a p a: t o n o w a g a y a n i w a s a N n i N m o n o o ky a k u s a m a g a m i e t a
+D14 f u m a N y a i r a d a ch i w a m o Q p a r a j u k e N y a m i n o m a w a r i n i m u k e r a r e t e i r u
+D15 t a k e n o k a w a n i m u g i m e sh i n o o n i g i r i o ts u ts u N d e j i s a N sh i ch u: sh o k u w a k o r e n i b a N ch a d a
+D16 g o g o w a sh u Q k i N sh i t e k o: k u: m o N d a i y a gy o gy o: m o N d a i n o sh i g o t o n i t o r i k u m u
+D17 h a y a m e n i ch o: sh o k u o s u m a s e j u: j i k a r a k a N i N t o f u j i N g a sh u: g o: sh i k i n e N s a ts u e: o o k o n a u
+D18 b o k u t a ch i g a t o m a r u sh i sh i g u ch i g o y a e ts u i t a n o w a n i j i h a N g o r o d a Q t a
+D19 o k o r e b a o k o r u h o d o h i n i a b u r a o s o s o g u y o: n a m o n o d a Q t a
+D20 t a i h a N w a o: t e n o ry u: ts u: gy o: sh a o h e t e sh o t e N e n a g a r e r u g a t a ch i m a ch i h e N p o N t o n a Q t e s u g a t a o k e s u h o N g a s u k u n a k u n a i
+D21 h i t o b i t o w a h i n a N sh i n a y a m i n a g a r a a y u m i y o Q t e i k u
+D22 j u: y o n e N m a e a r u ch u: k a N j a n i n a r i s u m a sh i t e a r u s e: sh i N by o: i N n i ny u: i N sh i t a h o N sh a n o k i sh a w a k a i t e i r u
+D23 o k a g e d e m o k u hy o: w a i z e N t o: i m a m a d a
+D24 u r e sh i s o: n i j i b u N d e p a N ts u o h a i t e i r u
+D25 s e N j i ts u h i s a sh i b u r i d e ky o: r i e k a e Q t e k i t a
+D26 k o n o h i i ch i n i ch i d e h i y a k e o sh i t a u d e n a d o g a h i r i h i r i s u r u
+D27 i: N o d e t a a t o k i z u i t e u d e d o k e: o m i r u t o ch o: d o g o j i h a N d e a Q t a
+D28 k o: sh i t a k a w a n o m e g u m i o z o N b u N n i u k e n a g a r a j i N r u i w a h a N e: e n o m i ch i o a y u m i h a j i m e t a n o d a t o i Q t e i:
+D29 ky o g i f u j o: r i o y u r u s a n a i t o i u y u: k i n i y o Q t e sh i k a w a r e w a r e w a n i N g e N r a sh i: k o k o r o o h o j i s u r u k o t o g a d e k i n a i n o d e s u
+D30 f u sh i g i s o: n a hy o: j o: g a i Q sh u N ts u k a r e g a n u k e t a y o: n a y a w a r a k a i hy o: j o: n i k a w a Q t a
+D31 m a r u d e o: z o r a n i ry o: t e o h i r o g e b a N z a i sh i t a y o: n i n o b i t a e d a g a d o: m u n o y o: n i j o: s u i r o o o: Q t e i m a s u
+D32 w a r e w a r e g i j u ts u sh a w a s a i k o: n o g i j u ts u s a i z e N n o t e o ts u i ky u: sh i t e a k e k u r e sh i t e k i t a
+D33 k a N r i s a r e h o g o s a r e t e m u d a o sh i r a z u n i s o d a Q t a n i N g e N w a y o w a i
+D34 i t a j i k i n o u e n i h i z a m a z u i t e j i b u N w a f u j o: n a n i N g e N d a t o z a N g e s u r u n o d e s u
+D35 y o k o m e d e ch i r a Q t o m i r e b a sh u j i N n o t a ch i a g a r u k e h a i g a s u r u
+D36 w a t a sh i t a ch i f u: f u w a g u N n o i r a i d e ch u: g o k u j i N u N t e N sh u n o ts u: y a k u o sh i n a g a r a sh a N h a i m a d e t o: h i k o: n o d o: h a N o sh i t a
+D37 sh a ts u m o n a k u z u b o N m o n a k u m o ch i r o N f u r u sh i N b u N m o n a k e r e b a f u r u z a Q sh i m o n a i
+D38 a s o b i m o b e N ky o: m o m a i p e: s u d e k a e r u b e k i j i k a N n i w a k i ch i N t o k a e r u t o i u k i ch o: m e N s a m o a r u
+D39 t o k i d o k i s e m a i sh i k i ch i n o h i b i n o h a i Q t a ch o k u s e N k o: s u d e k o d o m o g a ky a Q ch i b o: r u o y a Q t e i r u
+D40 sh u sh o: n i n a Q t e k a r a n o h o: g a z u Q t o hy o: j o: g a ny u: w a d a Q t a
+D41 o r e w a k o ts u k o ts u t o sh i N g u r u o n e r a u y o t o i u g a m o ch i r o N h o N n e d e w a n a k u m o ch i m a e n o p a w a: o h a Q k i sh i h a j i m e t e k i t a
+D42 y o s o: g a i n o j i t a i n i d e N ry o k u g a i sh a m o ch o Q p i r i k o N w a k u g i m i d a
+D43 r e: z a: k o: s e N o r e N z u d e k a k u s a N s a s e s a ts u e: sh i t a i b u Q t a i n i a t e s o n o h a N sh a k o: o h a N t o: m e: n a f i r u m u d e u k e r u
+D44 ch u: n e N i j o: w a o f u k u r o n o a j i o m o t o m e w a k a i h i t o w a f u k u r o n o a j i o m o t o m e r u
+D45 g a r a s u t o b i r a o o sh i t e h a i r u t o i Q sh u N k u b i y a h i j i k a r a a s e n o m a k u g a h a g i t o r a r e r u
+D46 sh o: n e N w a y u b i o z u b o N d e f u k u t o s u n a o n i i s o i s o t o t a ch i a g a Q t a
+D47 z u j o: n i w a t a e m a n a k u h e r i k o p u t a: n o b a k u o N g a k i k o e r u
+D48 sh i s a i g a f u m i e o s u r u t o i u k o t o w a d o N n a g o: m o N y o r i m o ts u r a i
+D49 h a ch i o: j i ch i h o: t o b u N k a j i N t o o m u s u b i ts u k e y o m i g o t a e n o a r u m o n o o j u: n e N a m a r i m o ts u z u k e t a
+D50 n a n i g e n a k u s o r a o m i a g e t e i t a a o z o r a n i p o Q k a r i t o ny u: d o: g u m o g a a ch i k o ch i n i u k a N d e m i o r o sh i t e i t a
+E01 i e n i k i t a n e N g a j o: w a s a N by a k u m a i h o d o d e ch o: d o d a sh i t a b u N t o o n a j i g u r a i d a
+E02 n a e g i e n o a i j o: w a k a e Q t e f u k a m a Q t e i k u y o: d a Q t a
+E03 sh u: r e i n a f u j i s a N m o i Q p o a sh i o f u m i i r e r e b a g a N s e k i n o r o sh u ts u sh i t a a r a a r a sh i: s u g a t a o a r a w a s u
+E04 y a m a n o s u s o n i ky u: s o k u sh i t e i r u a w a r e n a gy o s o N n o y a n e o m i t a
+E05 a r a y u r u b o: ry o k u sh u d a N o ts u k a Q t e a i t e n i ky o: f u k a N o a t a e r u
+E06 n i Q p o N n o j o s e: o f u k u m e k a n o j o t a ch i w a g u N j u b u Q sh i n a m i n i a ts u k a w a r e t a
+E07 j i k o g e N i N n o ky u: m e i w a i s o i d e m o r a i t a i
+E08 n i Q p o N j i N w a h i k i a g e n o k u r u sh i s a b a k a r i i: ch u: g o k u j i N n o k i z u o k a N g a e n a i
+E09 ch u: g o k u k i N d a i sh i o i r o d o Q t a e: y u: n o j i d a i g a s u g i t e y u k u
+E10 k o r e h o d o y a k u d o: k a N g a n a k u t e sh i z u k a d e ch i N ts u: n a d o: a g e t o i u n o m o m e z u r a sh i:
+E11 w a r e r a b o N j i N w a s u ky a N d a r u g a k i r a i d e w a n a i
+E12 m a s a n i k a w a r a b a N t e k i s e: j i s u N py o: d e a r u
+E13 t a y o: n a s e: sh u N m o y o: g a m i g o t o n i hy o: g e N s a r e t e i r u
+E14 ch i ch i n o u d e w a t a d a k a r e o g u N g u N h i Q p a Q t e i k u d a k e d a Q t a
+E15 u r e sh i k u t e y u: sh o k u d o k i n i h i t o r i d e w a i N d e k a N p a i s u r u
+E16 j a m u o t a k u s a N i r e t a r o sh i a k o: ch a g a o i sh i k a Q t a
+E17 g a m a N sh i k i r e z u o: g o e d e d o n a r i ts u k e s o n o h i n o s a ts u e: w a ch u: sh i n i n a Q t e sh i m a u
+E18 g o g o w a t a m a Q t a sh o r u i n i m e o t o: sh i t e k a e s u
+E19 b o ch i t o w a m a t a b e Q sh u n o sh i N p i s e: g a h i s o N d e i r u y o: n i o m o w a r e t a
+E20 h a h a n o ry o k o: z u k i w a ch i k a g o r o y u: m e: d a g a s o n o y u i i ts u n o k e Q t e N w a f u n e n i y o w a i t o i u k o t o d e a Q t a
+E21 s u g u s o b a d e h a: h a: h a z u m a s e t e i r u k o ky u: d a k e g a k i k o e t e k i t a
+E22 ts u y u t o k i r i d e g u Q sh o r i s u n a g a n u r e t e a sh i a t o g a k u Q k i r i ts u i t e i r u
+E23 k o N g o h o b o z e N m e N t e k i n i gy o: s e: g a t a i m a N n i n a r u o s o r e g a a r u
+E24 h o s o n a g a i k a r a d e N k i r e: z o: k o d e h i y a s u n o n i m o b e N r i t o i u
+E25 j i b u N n o s u k i n a j a z u p i a n i s u t o n o e N s o: e n o f u r u e r u y o: n a k a N d o: o ts u z u r u h i t o m o i t a
+E26 d a N b o: w a a ts u s u g i r u k u r a i d e h e y a o d e r u t o k i n i m o: f u o k a k e t e y a r e b a i: t o o m o Q t a
+E27 f u sh i g i n a k o t o n i j i b u N n o m e n o b u b u N d a k e n i w a y o s e ts u k e m a s e N
+E28 j i k o o k a e r i m i r u n i N g e N r a sh i: t a i d o d e a r u
+E29 w a t a sh i w a h e N sh u: i N o y o n e N k u r a i w a y a Q t a t o o m o u
+E30 m u r o N k o r e w a g u: z e N n o i Q ch i t o i u k o t o g a o: i n i a r o:
+E31 z u i b u N n o j o: n e ts u t o e n e r u g i: o m o Q t e b e N ky o: s a r e k e N ky u: s a r e t a
+E32 s e: d o g a u g o k a n u t o n a r e b a y a h a r i f u ts u g o: g a d e t e k u r u
+E33 s o Q k u r i sh o: t o i u t e r e b i b a N g u m i o m i t a k o t o g a a r u
+E34 y a m a n o sh i N ry o: j o d e m o Q t o m o ch u: i sh i n a k e r e b a n a r a n u n o w a sh o: n i n o by o: k i d e a Q t a
+E35 h i t o ts u w a ky o: i k u t o i u m o n o n o j u: y o: s a t o m u z u k a sh i s a d e s u
+E36 h i t o ts u n o g i j u ts u o m i n i ts u k e r u d a k e d e m o t a i h e N n a n i N t a i t o d o ry o k u g a h i ts u y o: d e s u
+E37 s o n o a i d a m u s u k o w a t o i u t o a sh i o k e g a sh i n a ts u y a s u m i o m a Q t e sh u j u ts u o u k e z u Q t o ny u: i N ch u: d a Q t a
+E38 k o ch i r a n o j u N b i m o g o z a i m a s u n o d e s o: ky u: n o g o h e N j i o o m a ch i i t a sh i t e o r i m a s u
+E39 y o r u w a n e m u r e n a i g u r a i k a y u k u t e k u r u sh i:
+E40 f i r i p i N d e n i Q p o N j i N n o ch i o h i k i ts u g u m o n o w a g a Q k o: d e m o sh o k u b a d e m o f u r i n i n a r u k o t o g a o: k a Q t a
+E41 u m i y a m a n o o: f u k u w a r i b i k i k i Q p u n o t a i h a N w a n a ts u y a s u m i n i m u k e t e u r i d a s a r e r u
+E42 h a N b u N ch i k a i r o k u gy o: sh a g a m i ts u y u h i N t o m i r a r e r u g e: n i k u n o b a i b a i o m o ch i k a k e r a r e t a
+E43 n o m i y a n o o y a j i ry o k a N n o sh u j i N i sh a o h a j i m e k o: s a i n o a r u h i t o n i k i: t e m a w a Q t a r a m i N n a w a t a sh i y o r i sh u: ny u: g a o: i h a z u n a n o n i z e: k i N w a y a s u i
+E44 h a h a w a o k o Q t e m a m e o j i b e t a n i n a g e ts u k e t a
+E45 i m a d e m o y o k o b u e w a m o ch i r o N sh a k u h a ch i n o y o: n a t a t e b u e m o t a k e g a h o t o N d o d a
+E46 s o b o w a o: m u n e k i g e N y o k u s a i k o r o o k o r o g a sh i t e i r u
+E47 h i k o: o h a t a r a k u sh o: n e N sh o: j o g a d o N d o N f u e t e i m a s u g a ch i Q t o m o f u sh i g i d e w a a r i m a s e N
+E48 o sh o k u j i k e N s u b e t e y o N j u: n i s a N s a i k a r a y o N j u: r o k u sh i ch i s a i m a d e k a ch o: h o s a k a ch o: b u j i ch o: t o i Q t a a t a r i g a m a ch i g a i o o k o s u
+E49 a N n a m o n o w a sh i N b u N y a z a Q sh i n o sh i r o i s u p e: s u o u m e r u t a m e n o j a r i d a
+E50 y o z o r a o a k a i h i g a t e N m e ts u sh i n a g a r a s e N k a i sh i j u Q p u N o k i n i sh o: m e i d a N g a y u Q k u r i t o o ch i t e k u r u
+F01 w i N d o s a: f i N n i ky o: j i r u w a k a m o n o t a ch i o n a g a m e t e s u n a h a m a n i n e k o r o g a Q t e i t a
+F02 y u: sh o k u w a i Q k o: g a s o r o Q t e s a sh i m i t o gy u: n i k u n o t e Q p a N y a k i o ts u ts u k u
+F03 o e r a g a t a g a z o k u z o k u t o t o: j o: sh i ky o: sh u k u s u r u
+F04 r e k i sh i k a w a m a r u d e j u N j o: m u k u n a ch o: sh i d e m o n o g a t a r i o h a j i m e r u
+F05 sh i N sh i N sh o: g a i sh a n o h o g o t o k a i f u k u k u N r e N n o t a m e n o e N g o sh i s e ts u o z o: s e ts u s u r u
+F06 h o s o: t o i u b u N m e: n o sh o: ch o: w a sh i b a sh i b a gy a k u ry u: g e N sh o: o o k o sh i t e n i N g e N n i g a i o m o t a r a s u
+F07 n i N g e N n o k o k o r o n o y o w a s a o r i y o: sh i ts u g o: n o i: sh o: k o o ts u g i ts u g i n i ts u k u r i a g e t e y u k u
+F08 h a j i m e k a r a s o: d a Q t a w a k e d e w a n a k u sh u j u ts u t o: j i w a o ch i k o m i o b i e t e n e m u r e n u y o r u m o a Q t a
+F09 n i Q p o N n o ky u: j o: d e w a y o k u k u ch i g i t a n a i n o n o sh i r i g o e g a m i m i n i h a i r u
+F10 ch i: s a i y u k i w a h a y a k u o: k i: y u k i w a f u w a f u w a t o o ch i t e k u r u
+F11 d a N b o: k i g u n o j i k i n i r e: b o: k i g u o n a r a b e r u y o: n a d e p a: t o w a t a ch i m a ch i ts u b u r e r u
+F12 a i t e ch i: m u m o s u m a: t o d a sh i n a n i y o r i m o ky u: j o: n o f u N i k i g a b a ts u g u N d e a r u
+F13 n a r a n o h e: j o: ky u: a t o k a r a j u: s u: n e N m a e t a i ry o: n o m o k u h e N g a h a Q k u ts u s a r e t a
+F14 k i sh o: ch o: g a k o n o k o sh o: o h a Q py o: sh i t a n o w a j i sh i N h a Q s e: g o y o j i k a N a m a r i t a Q t e k a r a d a Q t a
+F15 s u k u: r u d e e t a n o w a i Q sh o: n u g u e n a i ky o: f u k a N t o h i t o e n o f u sh i N k a N d a k e d a
+F16 k a N z u m e w a y a y a h o s o m e n o n i h o N n o m a k i o ts u k a Q t e h i k i a g e t a
+F17 m a Q p i r u m a n a n o n i ky a N p u n o h a z u r e n o d e N ch u: n i d e N ky u: g a t o m o Q t e i t a
+F18 k o n o i k e N n i u ch u: j i N t a ch i w a p a ch i p a ch i t o s o r e z o r e s u b e t e n o t e d e h a k u sh u sh i t e s a N s e: sh i t a
+F19 y o k o h a m a sh i w a s a i k i N d e N k i j i d o: sh a d e g o m i o sh u: sh u: s u r u t e s u t o o h a j i m e t a
+F20 j i N k o: e: s e: k a r a m i r e b a m i z u: m i y a n u m a m o k o b o r e t a m i z u d a
+F21 i m a d e w a a k a g o n o y o: n i m u y o k u d e a i r a sh i: hy o: j o: o s u r u ch i ch i n i m u n e f u s a g a r u o m o i g a s u r u
+F22 m u s u m e w a my o: n a k a N sh i N n o ts u b u y a k i o n o k o sh i h e y a e h a i Q t e i Q t a
+F23 h i r u k a r a y o r u m a d e o y o s o k o d o m o n o k a N g a e ts u k u a r i t o a r a y u r u a s o b i o y a Q t a
+F24 w a z u k a n o a i d a d a g a z u b o N n o s u s o o m a k u Q t e a s a i n a m i u ch i g i w a n o s u i ch u: o a r u k u
+F25 m u j a k i n a r o: f u j i N t o i u n o g a i: k a N j i d a Q t a
+F26 s o r e k a r a n a N k a g e ts u m o t a i h e N n a h i b i g a ts u z u i t a
+F27 y o: j i t o o b a: s a N n o o m o k a g e g a d a b u Q t e y u r a y u r a t o t o: z a k a Q t e i k u
+F28 n i N g e N n o sh i N t e: n i h i s o m u j i b u N h o N i n o m i n i k u s a o e N ry o n a k u s a r a k e d a sh i m a s u
+F29 s o r e d e m a d o o a k e r u t o y a k e d o o sh i s o: n a n e Q p u: g a f u k i k o N d e k u r u
+F30 i r o j i r o d e s u k e r u y o: n a h a d a d e y a y a u s u i i r o n o h i t o m i d e a Q t a
+F31 y a ky u: n o a t o n o b i: r u g u r a i u m a i m o n o w a n a i
+F32 m u r o N sh i N w a w a sh i N w a d e y o i n o d e a Q t e s o r e o h a i g e k i sh i t a r i s u r u h i ts u y o: w a n a i
+F33 w a t a sh i g a i ch i b a N f u r u i t o m o d a ch i t o i u n o d e h i b u N n ai i Q p i ts u s u s u m e r a r e t a
+F34 d o k o e i Q t e m o k a r e n o sh u: i n i w a sh i z e N n i f a N g a u m a r e t a
+F35 i m a n i N g e N n i h i ts u y o: n a n o w a j i b u N s a e y o k e r e b a i: t o i u y o k u b o: y a s e m a i k o k o r o d e w a a r i m a s e N
+F36 sh u j i N w a s o r e o d a m a Q t e u k e t o Q t e sh u Q k i N sh i t e i Q t a
+F37 k e Q k o N i r a i s a N n e N h a N b u r i n o t o: ky o: m o ky u: y u: t o n o o s a k e m o y a k o: r e Q sh a m o e k i d e n e t e a s a o m a ts u n o m o h i s a sh i b u r i d a
+F38 u ch i n o ch u: g a k u w a b e N t o: s e: d e m o Q t e i k e n a i b a: i w a g o j u: e N n o g a Q k o: h a N b a i n o p a N o k a u
+F39 f u ky o: d e ch u: sh o: k i gy o: g a d o N d o N t a o r e r u n o d e ky o: s o: a i t e g a o: k u n a Q t a
+F40 k o n o p u r o j e k u t o n o ny u: s a ts u sh a n o n a k a d e w a h e: sh a g a m o Q t o m o f u s a w a sh i: sh i k a k u o y u: sh i t e i r u t o j i f u i t a sh i t e o r i m a s u
+F41 g o z o N j i n o t o: r i f u ry o: k u r a Q ch i n i k a N s u r u h o sh o: w a s e i z o: g a w a n i g e N i N g a a r u b a: i n o m i n i k a g i r a r e t e i m a s u
+F42 k o t e: g a t a w a k o N g o k i N r i g a h i k i a g e r a r e t e m o g e N k o: s u i j u N n o m a m a t o i u m e r i Q t o g a a r u
+F43 e N d a k a sh o Q k u o s u k o sh i d e m o y a w a r a g e y o: t o j i d o: sh a d e N k i n a d o n o k i k a i s a N gy o: z e N p a N n i h i r o g a Q t a
+F44 i Q p o: d e n i Q p o N t o b e: k o k u n o k i N y u: k i k a N n o sh i t i: sh i N sh u ts u w a m e z a m a sh i:
+F45 k o: k u: j i k o o k a g i r i n a k u z e r o n i ch i k a z u k e r u n i w a s o r e h o d o n a r i f u r i k a m a w a n u d o ry o k u g a i r u
+F46 s u i f u t a ch i g a o: g o e d e w a m e k u t o g e N j u: m i N w a t a g a i n i k a o o m i a w a s e t e o f u Q t e k o t a e t a
+F47 o b a k e w a o b a k e d e m o m e m o n a k e r e b a h a n a m o n a i n o Q p e r a b o: n o i Q sh u d e a r u
+F48 t a t a N d e a r u h a N t e N o h i r o g e r e b a a ch i k o ch i n i ts u g i h a g i g a a r i k a t a g u ch i n i d e k i t a h o k o r o b i n a N k a ky o n e N n o m a m a n i n a Q t e i r u
+F49 s a s u g a o: ch a k u n a w a t a sh i m o g a m a N sh i k i r e z u i ch o: n o s e N m o N by o: i N e ny u: i N sh i t a
+F50 n a g a: m e g a y o: y a k u h a r e a g a r u t o y a m a n o h i d a n o h i t o ts u h i t o ts u g a a z a y a k a n i m i e r u h o d o m a j i k a n i y a m a g a m i e r u
+G01 a s a n o k o: s e N o gy a Q k o: g i m i n i u k e t e s u s u k i g a u ts u k u sh i k u h i k a r u
+G02 w a t a sh i g a f u t o ts u b u y a k u t o ch i ch i w a o: k i k u k u b i o f u Q t a
+G03 o k a n e o i r e b o t a N o o s u t o k i Q p u g a d e t e k u r u
+G04 i Q p a N r o N d e i e b a e N j o s u r u g a w a w a e N j o s a r e r u g a w a n o k u Q s e ts u sh i t a sh i N r i o m i o t o sh i g a ch i d e a r u
+G05 t e ch o: n i h a sh i r i g a k i sh i t a k a z o k u e n o i sh o w a y o m u m o n o n o k o k o r o o f u k a k u y u r i u g o k a s u
+G06 s o n o k e Q k a a m e g a f u r e b a t a i ry o: n o hy o: d o a k a ts u ch i k a g a k u h i ry o: n o: y a k u g a u m i n i n a g a r e d a s u
+G07 h i Q sh a n o ch i j i N n i s a N t a n o o j i s a N g a i r u
+G08 f u r u y o: n a h o sh i z o r a d e s o n o h o sh i z o r a o n a g a r e r u y o: n i i k u k u m o g a u ts u k u sh i:
+G09 k i z u n o u e o t e n u g u i d e h i y a s a r e r u t o z u i b u N sh i m i t a k e r e d o m o sh u: s a k u w a g a m a N o sh i t a
+G10 t o Q k u m i a i w a y u: g a t a m a d e ts u z u i t a
+G11 y o g o r e t a m a d o k a r a a m e n i n u r e t a m a ch i g a m i e r u
+G12 ch u: sh a i h a N g a g e N sh o: sh i k o: ts u: j i k o g a g e N sh o: s u r e b a i Q k i n i f u k i t o b u k o t o d a r o:
+G13 t e n i s u o s u r u g e N k i n o a r u h i t o g a ch o Q p i r i n e t a m a sh i:
+G14 ky o: m o k a Q t e y a r u z o t o i u k i a i g a j o j o n i h a i Q t e i Q t a
+G15 h a N t o sh i i ch i n e N t o ts u z u k u t o j i b u N k a r a n e g a i d e t e by o: i N o u ts u r u k o t o g a a r u t o i u
+G16 u r a g a e s e b a s o r e d a k e j i k e N o j u: d a i sh i sh i t e i r u sh o: k o d e a r u
+G17 s e r u f u s a: b i s u n o y u: sh o k u t o y o ky o: m o a Q t e n i g i y a k a n i d a N sh o: sh i k a i s a N w a y o f u k e t o n a Q t a
+G18 n i Q p o N j i N w a k e Q sh i t e y u: m o a t o m u e N n a j i N sh u d e w a n a k a Q t a
+G19 o y a j i w a g a N k o d a k e r e d o m o s o N n a e k o h i: k i w a s e n u o t o k o d a
+G20 sh o: n e N w a sh a b e r i o w a r u t o m a y u o sh i k a m e t e k u ch i o ts u g u N d e sh i m a Q t a
+G21 w a t a sh i w a i r o i r o n o b e N g o o j i b u N n o m u n e d e k o sh i r a e t e m i m a sh i t a
+G22 w a t a sh i n o y u b i n i w a h o: s e k i n o y u b i w a w a m o: h a m e r a r e m a s e N
+G23 k e N m e: n a i s e: sh a w a w a z a w a z a f u N ky u: n o t a n e w a ts u k u r a n a i m o n o d a
+G24 n a m i d a o p o r o p o r o n a g a sh i t e j i hy o: o k a i t a g a i ry u: s a r e t a
+G25 h o i k u j o e s u e Q k o o m u k a e n i i Q t a k a e r i by o: i N e m o y o Q t a n o d e s u Q k a r i o s o k u n a Q t e sh i m a Q t a
+G26 f u d a N w a d o r o n i m a m i r e t a m o N p e s u g a t a n o h a h a g a u s u g e sh o: sh i t e m i z u i r o n o w a N p i: s u o k i t e k i t a
+G27 y o r o k o b i b a k a r i g a ts u z u k u t o w a k a g i r a n a i n o d a
+G28 s o r e k a r a p u Q ts u r i y a m e t a n o g a sh i Q p a i n o h a j i m a r i d e a r u
+G29 m u s u m e w a b e Q d o n o h a sh i d e k i ch i N t o h i z a g a sh i r a o s o r o e t e j i Q t o d e N w a n o b e r u o m a ts u n o d e s u
+G30 g o s o: sh a w a u t a g o e o n o k o sh i t e h o n e m a d e k o: r i s o: n i ts u m e t a i h i s a m e g a f u Q t e i t a y a m i n i k i e t a
+G31 m o ch i m o n o w a sh o Q k i k i g a e n o sh i t a g i t a o r u s e N m e N y o: g u n a d o d a
+G32 d e p a: t o e i Q t e e r e b e: t a: d e s a i j o: k a i n i a g a r i m a z u o k o n o m i sh o k u d o: e h a i Q t a
+G33 n i N g e N y u e n i y o: ky u: s a r e r u r i N r i g a n i N g e N n o f u k o: o m o u m u t o i u k o t o n i n a r u k a m o sh i r e n a i
+G34 j u Q s a i t o sh i u e n o g o sh u j i N g a o g e N k i d e k a j i i Q s a i o n a s a Q t e i m a sh i t a
+G35 i ts u m a d e m o t o: ky o: a t a r i d e g u z u g u z u sh i t e i r e b a i z u r e w a y a k e d a s a r e r u n o d e w a n a i k a t o i u f u a N w a ts u n e n i a Q t a
+G36 k a r e g a k o n o sh u Q ch o: ch u: n i h o: m o N k i b o: n o b u sh o o y o b i ch o: s a k i b o: n o b u m o N w a i k a n o t o: r i d e s u
+G37 y u: j o: o m o i y a r i ky o: ry o k u n o k o k o r o w a sh o: r a i n o sh a k a i s e: k a ts u n i ts u y o i e: ky o: o o y o b o sh i m a s u
+G38 r a N d o s e r u o s o Q t o g e N k a N n i h o: r i k o N d e h a h a o y a n i m i ts u k a r a n u y o: n i s o t o n i d e t e i k u
+G39 g e N z a i n o ny u: sh i n i m a ts u w a r u k o N r a N w a s e N b a ts u h o: h o: n o k a i z e N d e o s a m a r u m o n o d e w a n a i
+G40 s o r e r a w a m u r o N g e N s a k u s o n o m o n o d e w a n a i sh i s o n o ch u: j i ts u n a h o N y a k u d e m o n a i
+G41 y a n e n i w a k i m i ts u sh i k i n o d e N d o: d o r i r u d e a n a o a k e sh o: j i r u f u N j i N w a d o N d o N ky u: i N s u r u
+G42 b a N s a N n o ry o: r i t o s a: b i s u w a o: t e y o N h o t e r u g a r i N b a N s e: d e u k e m o Q t e i r u g a m e ny u: w a ts u n e n i f u r a N s u ry o: r i t o k i m a Q t e i r u
+G43 k a k u k o: n o sh u sh o: y a m a n e: j a: g a k i N ch o: sh i t a o m o m o ch i d e k u j i o h i k u
+G44 s e r o N n i o s a r e t e ts u: s a N sh o: m o g o j u: n i n e N k a r a h e: y o: o m i t o m e t a
+G45 ch i ky u: hy o: s o: o o: u ch i k a k u p u r e: t o n o u N d o: o s a g u r u n o g a k o n o j i Q k e N n o g a N m o k u d a
+G46 h i N z u: ky o: ch i b e Q t o b u Q ky o: n i t o Q t e k o k o w a u ch u: n o ch u: sh i N sh i N s e: o k a s u b e k a r a z a r u s e: i k i d e a r u
+G47 s e: r i k e N o t e n i i r e r u n o n i g o j i k a N i j o: gy o: r e ts u sh i t a h i t o m o i r u
+G48 h o sh u sh u g i t o d o k u z u k a r e t e y o r i n i y o Q t e s a i s e N t a N n o z e N e: s a Q k a o e r a N d a n o d a k a r a o: r i ts u a k a d e m i: m o h i t o g a w a r u i
+G49 j i j i ts u t o s u r e b a y o h o d o a t a m a n o k a i t e N n o h a y a i h i t o d a r o:
+G50 r i y u: w a h i j o: n i m e: h a k u d e a Q t e w a t a sh i w a k o: e N g a h e t a d a k a r a d e a r u
+H01 s e k a i g a k i: r o k u m i e r u t o i u hy o: g e N w a r i a r i z u m u d a Q t a n o d a
+H02 t o: j i n i Q p o N i ch i n o ch o: ky o r i b a s u d e a r u
+H03 m u sh i j i d o: sh a n o h a i k i g a s u t a i f u: n a d o n a e g i o g a i s u r u m o n o w a o: i
+H04 k o N d o w a gy a k u n i k u r o i b u b u N n i ch u: m o k u sh i t e m i r u
+H05 y a Q t o n o Q t a d e N sh a n o n a k a d e w a a Q ch i k o Q ch i e t o o s a r e t e h e t o h e t o n i n a r u
+H06 w a t a sh i t a ch i n o sh a k a i w a k o t o b a n i y o r u k o my u n i k e: sh o N n i y o Q t e s a s a e r a r e t e i r u
+H07 n a z e k a f u i n i j i b u N n o sh o: n e N j i d a i o o m o i u k a b e t a
+H08 a r u sh a ch o: w a w a k a i a i d a w a o: i n i a s o b e t o i u
+H09 u r o t a e z u n i y u sh u ts u i z o N n o t a i sh i ts u o j o j o n i m i n a o sh i t e i k u s a gy o: g a t a i s e ts u n i n a r u
+H10 s a N j u: n i ch i k a N o k o e r u m e N m i ts u n a i N t a by u: n o s e: k a d a r o:
+H11 k o k u s a N h i N n o y o: n i m i e t e j i ts u w a g a i k o k u s a N t o i u sh o k u h i N g a h a N r a N sh i t e i r u
+H12 k e N s e ts u sh o: y a k o k u d o ch o: w a t o ch i k o r o g a sh i o f u s e g u t a m e n o k i s e: o y u r u m e y o: t o sh i t e i r u
+H13 h i t o w a t e y a y u b i s a k i n o s e N s a i n a u g o k i y a m e n o hy o: j o: g a s u b a r a sh i: t o i u
+H14 y u: m o a t o w a k o: m a N k o n o u e n a i g e d o k u z a i d a
+H15 s e N s o: m a Q k i s o r e N g u N t o t a t a k a Q t e h o ry o n i n a Q t a t a i k e N o m o ts u h i t o d a
+H16 d a m a s a r e r u h o: n o ch i sh i k i s u i j u N n i m o N d a i g a a r u n o d e g o z a i m a s u
+H17 k a g i r a r e t a y o s a N d e sh i g o t o o s u r u b i j u ts u s u t a Q f u n o k i m o ch i o o sh i h a k a Q t e g a m a N s u r u
+H18 j u: n i g a ts u y o: k a n o k a i s e N o s u k u: p u sh i t a y o r u sh u h i ts u t o sh i t e n e m u r e n u y o r u o s u g o sh i t a
+H19 i ch i n e N j u: s u r i k i r e t a k o k u r a n o ts u m e e r i f u k u i Q ch a k u d e t o: s u
+H20 s o n o a t o s u: m e: d e r o Q p o N g i n o s u sh i y a n i i Q t a
+H21 y o: f u k u y a s a N w a ts u m a t o w a t a sh i n i h a N h a N n i i Q t a
+H22 g a r a g a r a t o h i b i k u o t o n o h o: g a o: k i k u t e e N z e ts u w a s o r e k i r i d e o w a Q t a
+H23 h i t o b i t o w a h a n a n o n a e y a t a n e o sh o: ky a k u sh i h a t a k e n o h a n a o z e N b u n u k i t o Q t e sh i m a u
+H24 o n o r e o k o e n a k e r e b a sh o: r i n o m e g a m i w a h o h o e N d e k u r e n a i r a sh i:
+H25 sh u: ky u: f u ts u k a s e: n i n a Q t e i t e d o y o: b i w a y a s u m i d a Q t a
+H26 m i r u t o ts u m a w a i Q sh i N f u r a N n i n e m u Q t e i r u
+H27 s o n o a t o o r o: j i N w a a m e n i n u r e n a g a r a o: g o e d e n a k i w a m e i t e o Q t e y u k u
+H28 m o: y u: g u r e n o y o: d e a r u
+H29 k o n o t a i p u n o n i N g e N g a i ch i b a N t a ry o: n o sh i g o t o o s u r u
+H30 n i Q p o N e m o d o Q t e k a r a s o r e z o r e sh u Q s e o sh i t e i r u y o: s u d e a Q t a
+H31 o: a m e g a f u Q t e m i z u k a s a g a m a s e b a ry u: i k i i Q p a i n i h i r o g a Q t e n a g a r e r u k o t o m o a Q t a
+H32 k o N k a w a j i Q k a n o s u g u ch i k a k u d e h a i y a: o ts u k a u h o d o n o ky o r i d e w a n a k a Q t a
+H33 b o: sh i m o b e r e: b o: t o k a i r o i r o a r u g a b o k u w a m o Q p a r a y a ky u: b o: o a i y o: sh i t e i r u
+H34 d o r a m a w a a k u m a d e m o d o r a m a d e a r i ky o k o: d e a Q t e g e N j i ts u d e w a n a i
+H35 k e Q k o N m o r i k o N m o t a n i N k a r a w a u m u o i w a s a z u j i b u N k a r a k e Q t e: sh i t a
+H36 ch i: s a n a i e n i h i Q k o sh i h a y a ky u: k a g e ts u g a s u g i s a r i m a sh i t a
+H37 ky o r o ky o r o t o a t a r i o m i m a w a s u t o t o ts u z e N k a r e w a k o e o h i s o m e t o Q t e o k i n o h i m i ts u o u ch i a k e r u k a o ts u k i n i n a Q t a
+H38 t a b a k o n o y a k e k o g e w a m i g u r u sh i: m o n o d e s u
+H39 ch o: k i h o k a N n i w a b o: ch u: z a i o sh i y o: sh i m a s u
+H40 ch i r i d a n i w a h i t o n o f u k e y a a k a o k o n o m u
+H41 t a i sh u: o s e N d o: s u r e b a g u N t a i n o k a i ny u: o m a n e k u d a k e d a
+H42 z u j o: n i w a m i g i j o: h o: e t o ky u: k a k u d o d e n o b o r u s e N g a k u Q k i r i t o e g a k a r e t e i r u
+H43 a N sh i N sh i t e f u n e o k o g u k o t o m o d e k i r e b a y a j i m o t o b a s e r u
+H44 h e: k a i sh i k i d e n a k i d a sh i t a k o N p a n i o N m o y o r u n o d i s u k o p a: t i: d e w a h a g e sh i k u o d o r i m a k u Q t a
+H45 k o n o i Q sh u: k a N g o g o n o j i k a N o z e N b u n i w a d e h i o m o y a sh i n a g a r a s u g o sh i t a
+H46 h a h a o y a n o u r e sh i s o: n a hy o: j o: g a n o: r i n i y o m i g a e Q t a
+H47 p i r a m i Q d o o k i z u k u d a k e n o k u r o: g a s o k o n i s o s o g a r e t a h a z u d e a Q t a
+H48 j i Q s a i s o: d e m o n a k e r e b a g o n e N k a N m o k o k o n o k o sh i ts u d e ny u: i N s e: k a ts u o ts u z u k e r a r e r u h a z u w a n a i
+H49 r o: j i N w a gy o f u t o sh i t e s u b a r a sh i: n i N g e N d a t o o m o u
+H50 j i Q sh u: ch u: w a y u k i g a f u Q t e i t a k e r e d o h o Q p e n o i t a s a m o m o: a j i w a e n a k u n a r u k a t o o m o u t o z e N z e N h e: k i d a Q t a
+I01 g o j u: g o s a i d a Q t e u r e sh i: t o k i w a u r e sh i: n o d a
+I02 sh i z e N n o ch i e d e y o k u sh i Q t e i r u
+I03 k o k o r o t o k o k o r o n o k a y o i a u y u t a k a n a k o my u n i k e: sh o N o k a i f u k u s a s e r u m i ch i d e w a n a k a r o: k a
+I04 e N k e: n o k i d o: n i s o Q t e ch i ky u: o m e g u Q t e i r u
+I05 t e N n e N k i n e N b u ts u ky u: n o k i b o t o i u g a k u sh a n o h a ts u g e N m o a Q t a
+I06 s e m i g a n a k i y u: h i o a b i t a k i n u g u m o g a a w a i s a N g o i r o n i s o m a Q t e i t a
+I07 o s o r a k u h o k a n i m o i sh o o k a i t a h i t o w a i r u h a z u d a
+I08 a k i s a m e z e N s e N t o n o o ts u k i a i d e w a h i t o a m e g o t o n i m o m i j i g a k o k u n a Q t e y u k u
+I09 g u N sh u: k o: d o: d e o s o r o sh i: n o w a d o s a k u s a m a g i r e n o sh i N r i d a
+I10 by o: sh o: n o h a h a o y a g a d a r e k a n i t e g a m i n o d a i h i ts u o t a n o m u
+I11 h a y a k u m o i sh i h a k u j a k u b u r i o h a Q k i sh i t a
+I12 m e n o m a e d a k e o n i r a m i i Q p o i Q p o n o b o r u sh i k a n a i
+I13 o r e n o p u r a i b e: t o j i k a N o o r e g a d o: s u g o s o: t o s u b e t e o r e n o s e k i n i N n a n o d a
+I14 k a t e r u sh i a i n i n a z e k a t e s o: n a p i Q ch a: o s e N p a ts u s a s e n a i n o d a r o: k a
+I15 h i r u m a e n i g a Q sh u k u j o n o d e N w a g a n a Q t a
+I16 t e r o g a a r u k a r a y a m e r o t o s a N z a N i w a r e t a
+I17 sh i k a sh i s o n o o: e N b u r i w a y a k e g i m i n i k a e Q t e h a g e sh i k u n a Q t a
+I18 i m a m o a r a t a m e t e k o n o sh i N t o sh i z u N d a j o j o: n i k a N p u k u s u r u
+I19 r a N b o: d e r a N b o: d e y u k u s a k i g a a N j i r a r e r u t o h a h a g a i Q t a
+I20 k o r e w a gy o m i N t a ch i n o n i ch i j o: k e: k e N d e a r u
+I21 ch i Q s o y a r i N w a m u r o N t e N n e N n i m o k a s e N n a d o o ts u: j i t e u m i n i n a g a r e k o m u
+I22 ch i ch i w a t a b a k o o s u i h a h a w a b o N y a r i sh i t e i t a
+I23 k e N s a ts u n i k i t a sh a sh o: m o m i t e m i n u f u r i d e a r u
+I24 k o n o o: r a k a s a g a k e Q ky o k u w a b u N r e ts u o s u k u:
+I25 s o n o s u i g e N n o k o sh o: w a i t a m e ts u k e r a r e h i m e: o a g e r u g e N k i m o n a i
+I26 w a r a i k a t a n i ch u: i s u b e k i d e a r u
+I27 sh o k u i N sh i ts u d e m o w a k u o t o r i h a r a Q t e n a N d e m o sh a b e r i a u
+I28 k o N n a n i s a w a g a s e t e h o: m u r a N n o i Q p o N m o u t a n a ky a sh o: ch i sh i n a i
+I29 ky o: w a k u m a n o n u i g u r u m i d e n a n i y a r a a s o b i g a h a j i m a Q t a
+I30 s a i g o m a d e d o: m o f u sh i g i n a h o d o o i sh i: n a t o o m o i ts u z u k e t a
+I31 n i N g e N g a o n a j i n i N g e N o t a s u k e r a r e n a i w a k e g a a r i m a s e N
+I32 ny u: sh i m a e n o n a ts u y a s u m i d a t o i u n o n i h o N b a k a r i y o m i f u k e Q t e i t a
+I33 s a N s o N d e w a w a k a i ch i k a r a g a h e r i n a y a N d e i r u
+I34 g o f u N h o d o s e N m e N j o n i i Q t e m o d o Q t e m i r u t o b e Q d o n o u e n i o i t e a Q t a k a t a k a k e k a b a N g a n a i
+I35 m o Q t o m o h e N sh u: k a i g i n i w a s o n o h o: g a ts u g o: g a y o i
+I36 e N p i ts u d a t o ch i k a r a o i r e t e k a k u n o d e s u p i: d o g a n i b u r u n o d e a r u
+I37 j i b u N n o y o: n a sh i o t o g e r u n i N g e N g a f u t a t a b i u m i d a s a r e n u k o t o o n e g a Q t a h a z u d a
+I38 f u sh i g i n a k a N m e: t o f u i o ts u k a r e r u ky o: i o o b o e r u t o k i k a N j o: i ny u: s e z u n i w a i r a r e n a k a Q t a
+I39 o t e r a m a d e h i t o r i z u ts u t e o h i: t e ts u r e t e i Q t a n o o o b o e t e i m a s u
+I40 m i N n a w a s o r e k a r a k a r e g a ny u: i N ch u: h i t o z u k i a i g a w a r u k u d o: m o n i g a t e d a Q t a t o i u hy o: o sh i h a j i m e t a
+I41 m a t a g o ts u g o: g a y o r o sh i k e r e b a s o n o b a N y u: sh o k u n i g o sh o: t a i sh i t a i t o z o N j i m a s u
+I42 ch o: m a N i N n o k a N ky a k u s e k i n o f a N w a a Q t o: t e k i n i k a n o j o b i: k i d a
+I43 o: b e i d e w a sh i z u m i y u k u b e n e ch i a n o m a ch i o s u k u: u N d o: g a h i r o g a Q t e i r u
+I44 f u r u k u n a Q t e a m a m o r i g a s u r e b a f u k i k a e r e b a i:
+I45 h e: w a o n o z o m i a k u sh u sh i a i ky o: d a i n o y o: n a k i m o ch i d e w a k a r e o ts u g e r u
+I46 i: sh o k u n i N w a sh i g o t o t o i u m o n o w a o b o e r e b a o b o e r u h o d o m u z u k a sh i k u n a r u t o i: m a s u
+I47 m u sh i r o k i s o k u t a d a sh i s a d e y a s u r a g i o k a N j i s a s e t e k u r e t a
+I48 my o: ch o: s o r e g a t o d o i t a r a u d e n i o b o e n o a r u r e N ch u: o k u N d e j o: r i k u y o: s e N t e: d e a ch i r a g i sh i e w a t a r u
+I49 h a j i m e t e ch i N m o k u o y a b u Q t e k i r i s u t o g a s a s a y a i t a
+I50 z a N k o k u n a j i j i ts u g e N j i ts u n i m e o o: Q t e t o: r i s u g i r u k o t o n o h o: g a y o r i o s o r o sh i:
+J01 ch i: s a n a u n a g i y a n i n e Q k i n o y o: n a m o n o g a m i n a g i r u
+J02 d o r o b o: d e m o h a i Q t a k a t o i Q sh u N b o k u w a o m o Q t a
+J03 g a k u s e: w a r e p o: t o o o k u t o ch o Q t o a t a m a o s a g e t e d e t e i Q t a
+J04 k i Q p u o k a u n o w a j i d o: h a N b a i k i k a r a d e a r u
+J05 t o k a i d e w a d e a u h i t o n o h o t o N d o g a m i sh i r a n u h i t o d e a r u
+J06 hy o: g e N s u r u n o: ry o k u o m i n i ts u k e r u k o t o d e a r u
+J07 k i gy o: k i b o b e ts u n o ch i N g i N k a k u s a m o s u k o sh i z u ts u ch i j i m a Q t e k i t a
+J08 i Q py o: n o k a k u s a w a s a r a n i h i r o g a r u d a r o:
+J09 k o r e g a h i r o i i m i d e n o k i N z o k u h i r o: n i y o r u h a k a i d e a r u
+J10 i: a j i n o w a i N o u r u m i s e n a r a ky a k u g a a f u r e r u
+J11 h e: k i N b a i r i ts u o s a g e t a k e: s e k i g a a r u
+J12 j i N b u ts u n o d o k u h a k u g a a r e b a s o r a k a r a m i o r o s u y o: n a by o: sh a g a a r u
+J13 b u N m e: o s a s a e r u d o d a i g a k u z u r e t e sh i m a u
+J14 h i t o b i t o g a j i y u: n i d e i r i d e k i r u
+J15 d a N d a N j i b u N g a o s o r o sh i k u n a Q t e i e n i n i g e k a e Q t a
+J16 g o z e N ch u: d e o w a r u r e N sh u: o n e Q t o u r a k a r a k a i m a m i t a
+J17 i ts u m o n o ky u: j i ts u n o p a t a: N o s u g o sh i t e h i g a k u r e r u
+J18 o N g a k u n o s u k i n a o r e n o t a m e n i w a z a w a z a r o Q k u my u: j i Q k u o y o: i sh i t e k i t e a Q t a
+J19 f u sh i g i n a k u r a i u ts u k u sh i k u i r o d o r a r e t a m i ch i o i k u
+J20 m a Q sh i r o n a h a g a sh i r o i t e: p u t o t o m o n i y u r e t a
+J21 ny u: g a k u sh i k e N o u k e r u t o k i y o r i h i Q sh i n o o m o i d e a r u
+J22 k o ch i r a m o ky a Q t o w a m e i t e t o b i a g a Q t a
+J23 ry o: t e n o y u b i w a h e N k e: sh i k a N s e ts u n o a t a r i g a k o b u j o: n i m o r i a g a Q t e i t a
+J24 m o N d a i w a t o: hy o: k a i hy o: n o f u s e: d e a r u
+J25 k a w a r i b i n a w a s e s o: o ts u z u r u
+J26 y o i i sh i w a k a N j a n o h a n a sh i o y o k u k i k u
+J27 g o t e n i m a w a Q t e m a k e t a k e: s a ts u g a f u N k i s u r u b a N d a
+J28 t e N i m u h o: o: r a k a n a m o n o d a
+J29 k o N d o w a f u g u n o k i s e ts u n i i Q t e m i t a i
+J30 u N t e N m e N ky o o t o Q t e s a N n e N m e n i n a r i m a s u
+J31 n a z e j i b u N b a k a r i k o N n a m e n i a u n o d a r o:
+J32 m u s u m e n o f i a N s e d e k o i ts u d a k e n i w a d o: sh i t e m o m a k e r a r e n a i
+J33 s o r e w a t a i t e: i ch i j i k a N n i m o o y o b u
+J34 j i b u N y o r i o: k i k u k a N j i r a r e r u m o n o w a s u b e t e k o w a i
+J35 s o n o f u j i N w a m e o k o Q ch i n i m u k e t e w a i r u g a m i t e w a i n a i
+J36 w a t a sh i w a s o r e o ry o k a N n i m o Q t e k a e Q t a
+J37 h i N n o y o i y o k o g a o g a s a m i sh i s o: d a Q t a
+J38 g a N b o: s a e ts u y o k e r e b a j i k a N w a m u k o: k a r a y a Q t e k u r u
+J39 s o r e w a d o r o n u m a n o y o: n a gy a Q ky o: k a r a n u k e d a sh i t a i t o i u s e ts u n a i h o d o n o g a N b o: d a r o: k a
+J40 m a i n i ch i by o: i N m a d e k a y o Q t a h a h a n o a i n o f u k a s a ts u y o s a d e a r u
+J41 h i s a sh i b u r i n i n a ts u k a sh i: n i N g e N m i n i f u r e t e k o k o r o n a g o N d a y o r u d a Q t a
+J42 i ry u: h i N t o i Q t e w a i t o i Q p o N m o o ch i t e i n a k a Q t a
+J43 m u z u k a sh i: t o k i k o s o p u r o n o u d e n o m i s e d o k o r o d e s u
+J44 k a r e m o sh o ky u: o h o N r u i d a sh i t e g e k i t e k i n a s a y o n a r a g a ch i o o s a m e t a
+J45 i r a N n i t e N k i y o h o: w a n a i
+J46 f u k o: h e: n o s o N z a i w a h i n i N sh i n a k a Q t a
+J47 u m a r e t e m a m o n a i k o n e k o g a i Q p i k i u ch i n i m a g i r e k o N d e k i t a
+J48 w a t a sh i t a ch i w a sh i z u k a n i a y u m i y o r i a t a m a o s a g e t a
+J49 a m e n o t a m e k a y a ch o: g a m u r a g a Q t e k i s e: o a g e t e i t a
+J50 h e y a i Q p a i n i t a b a k o n o n o: m u g a t a ch i k o m e y u r u y a k a n i u g o i t e i r u
+J51 h a t a k e w a h i a g a r i ts u ch i w a w a r e r u
+J52 a o i a o i u m i w a j o s e: n o u ts u k u sh i s a o m o Q t e i r u
+J53 m a w a r i n o u ts u k u sh i: y u k i g e sh i k i o m i r u y o y u: m o d e t a
