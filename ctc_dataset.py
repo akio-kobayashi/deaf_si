@@ -20,7 +20,7 @@ class CTCDataset(SpeechDataset):
     value2class = {'1.0':0, '1.5':1, '2.0':2, '2.5':3, '3.0':4, '3.5':5, '4.0':6, '4.5':7, '5.0':8}
 
     def __init__(self, csv_path:str, ctc_path:str, vocab_path:str, text_path:str, target_speaker:str, sample_rate=16000,
-                 train_df=None, train_ctc_df=None, loss_type='mse', return_length='True') -> None:
+                 train_df=None, train_ctc_df=None, loss_type='mse', return_length=True, sort_by_length=True) -> None:
         super().__init__(csv_path, target_speaker, sample_rate, train_df, loss_type, return_length)
 
         self.total_ctc_df = None
@@ -42,10 +42,23 @@ class CTCDataset(SpeechDataset):
                 tag = line.split()[0]
                 text = ' '.join(line.strip().split()[1:])
                 self.atr_text[tag] = text
-                
+        # if process sorted order
+        self.ctc_idx = 0
+        self.sort_by_length = sort_by_length
+        if self.sort_by_length:
+            self.ctc_df = self.ctc_df.sort_index(by='length')
+
     def get_ctc_df(self):
         return self.total_ctc_df
-    
+
+    '''
+        CTCのデータフレームをリセットし，ランダムにサンプルを取得
+    '''    
+    def reset_ctc_df(self):
+        self.ctc_df = self.total_ctc_df.sample(len(self.df), random_state=np.random.randint(1000, dtype='int32'))
+        self.ctc_idx = 0
+        if self.sort_by_length:
+            self.ctc_df = self.ctc_df.sort_index(by='length')
 
     '''
         データフレームからidx番目のサンプルを抽出する
@@ -54,6 +67,8 @@ class CTCDataset(SpeechDataset):
         wave_si, _, value, self.loss_type = super().__getitem__(idx)
         
         row = self.ctc_df.iloc[idx]
+        if self.sort_by_length:
+            row = self.ctc_df.iloc[self.ctc_idx]
         wave_ctc_path = row['path']
         wave_ctc, sr = torchaudio.load(wave_ctc_path)
         if sr != self.sample_rate:

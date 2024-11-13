@@ -27,7 +27,8 @@ class LightningSolverCTC(pl.LightningModule):
         self.ctc_loss = nn.CTCLoss()
         self.weight = config['ctc_weight']
         self.return_lengths = config['return_length']
-        
+        self.train_dataset = None
+
         self.save_hyperparameters()
         
     def forward(self, wave:Tensor, lengths:list, ctc:bool) -> Tensor:
@@ -93,3 +94,8 @@ class LightningSolverCTC(pl.LightningModule):
         optimizer = torch.optim.AdamW(self.parameters(),
                                      **self.optim_config)
         return optimizer
+
+    def on_train_epoch_end(self):
+        if self.train_dataset is not None:
+            self.train_dataset.reset_ctc_df()
+            

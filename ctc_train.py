@@ -39,7 +39,9 @@ def train(config:dict, target_speaker):
                                    pin_memory=True,
                                    shuffle=False, 
                                    collate_fn=lambda x: data_processing(x))
-           
+
+    lite.traindata_set = train_dataset
+    
     callbacks = [
         pl.callbacks.ModelCheckpoint( **config['checkpoint'])
     ]
