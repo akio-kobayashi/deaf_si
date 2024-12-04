@@ -10,7 +10,7 @@ from model import SIModel
 class SIModelCTC(SIModel):
     def __init__(self, config, output_dim=1):
         super().__init__(config, output_dim)
-        self.lstm_ctc = nn.LSTM(512, 256, 1,
+        self.lstm_ctc = nn.LSTM(1024, 256, 1,
                                 batch_first=True,
                                 bidirectional=True)
         self.linear_ctc = nn.Linear(512, config['output_class'])
@@ -25,7 +25,10 @@ class SIModelCTC(SIModel):
 
         # CTC (b t f) -> (b t n), t=max valid lengths of input sequences
         if ctc is True:
-            v, _ = self.lstm_ctc(y.extract_features)
+            #print(y.last_hidden_state.shape)
+            #print(y.extract_features.shape)
+            #exit(1)
+            v, _ = self.lstm_ctc(y.last_hidden_state)
             v = self.linear_ctc(v)
             return v
         else:

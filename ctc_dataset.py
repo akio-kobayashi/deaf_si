@@ -24,17 +24,14 @@ class CTCDataset(SpeechDataset):
         super().__init__(csv_path, target_speaker, sample_rate, train_df, loss_type, return_length)
 
         self.total_ctc_df = None
-
-        df = pd.read_csv(ctc_path)
-        
         if train_ctc_df is None:
-            self.total_ctc_df = pd.read_csv(ctc_path).query('speaker!=@target_speaker').sample(frac=0.90)
+            self.total_ctc_df = pd.read_csv(ctc_path).query('speaker!=@target_speaker').sample(frac=0.80)
         else:
             self.total_ctc_df = pd.read_csv(ctc_path).query('speaker!=@target_speaker')
-            self.total_ctc_df = self.total_ctc_df.merge(train_ctc_df, on=['path', 'speaker', 'atr'],
+            self.total_ctc_df = self.total_ctc_df.merge(train_ctc_df, on=['path', 'speaker', 'atr', 'length'],
                                                         how='outer', indicator=True).query('_merge == "left_only"').drop('_merge', axis=1)
-
-        self.ctc_df = self.total_ctc_df.sample(len(self.df), random_state=np.random.randint(1000, dtype='int32'))
+            self.total_ctc_df = self.total_ctc_df.sample(len(self.df), random_state=np.random.randint(1000, dtype='int32'))
+        #self.ctc_df = self.total_ctc_df.sample(len(self.df), random_state=np.random.randint(1000, dtype='int32'))
         self.processor = TextProcessor(vocab_path)
         self.atr_text = {}
         with open(text_path, 'r') as f:
@@ -46,7 +43,7 @@ class CTCDataset(SpeechDataset):
         self.ctc_idx = 0
         self.sort_by_length = sort_by_length
         if self.sort_by_length:
-            self.ctc_df = self.ctc_df.sort_index(by='length')
+            self.total_ctc_df = self.total_ctc_df.sort_values(by='length')
 
     def get_ctc_df(self):
         return self.total_ctc_df
@@ -55,20 +52,25 @@ class CTCDataset(SpeechDataset):
         CTCのデータフレームをリセットし，ランダムにサンプルを取得
     '''    
     def reset_ctc_df(self):
-        self.ctc_df = self.total_ctc_df.sample(len(self.df), random_state=np.random.randint(1000, dtype='int32'))
+        #self.ctc_df = self.total_ctc_df.sample(len(self.df), random_state=np.random.randint(1000, dtype='int32'))
         self.ctc_idx = 0
-        if self.sort_by_length:
-            self.ctc_df = self.ctc_df.sort_index(by='length')
+        #if self.sort_by_length:
+        #    self.ctc_df = self.ctc_df.sort_values(by='length')
 
     '''
         データフレームからidx番目のサンプルを抽出する
     '''
     def __getitem__(self, idx:int) -> Tuple[Tensor, int]:
         wave_si, _, value, self.loss_type = super().__getitem__(idx)
+
+        #row = self.ctc_df.iloc[idx]
+        #if self.sort_by_length:
+        if self.ctc_idx >= len(self.total_ctc_df):
+            sefl.ctc_idx = 0
+        #row = self.ctc_df.iloc[self.ctc_idx]
+        row = self.total_ctc_df.iloc[self.ctc_idx]
+        self.ctc_idx += 1
         
-        row = self.ctc_df.iloc[idx]
-        if self.sort_by_length:
-            row = self.ctc_df.iloc[self.ctc_idx]
         wave_ctc_path = row['path']
         wave_ctc, sr = torchaudio.load(wave_ctc_path)
         if sr != self.sample_rate:
@@ -116,7 +118,7 @@ def data_processing(data:Tuple[Tensor, list, int, float, str]) -> Tuple[Tensor, 
     label_lengths_tensor = torch.tensor(label_lengths).to(torch.int64)
     
     # 話者のインデックスを配列（Tensor）に変換
-    if loss_type == 'kappa':
+    if loss_type == 'kappa' or loss_type == 'custom':
         values = torch.from_numpy(np.array(values)).clone().to(torch.int64)
     else:
         values = torch.from_numpy(np.array(intelligibilities)).clone().float()

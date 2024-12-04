@@ -19,7 +19,8 @@ def train(config:dict, target_speaker):
     train_dataset = CTCDataset(csv_path=config['csv'], ctc_path=config['ctc_csv'],
                                vocab_path=config['vocab'], text_path=config['text'],
                                target_speaker=target_speaker,
-                               loss_type=config['loss']['type'], return_length=config['return_length'])
+                               loss_type=config['loss']['type'], return_length=config['return_length'],
+                               sort_by_length=config['sort_by_length'])
     train_loader = data.DataLoader(dataset=train_dataset,
                                    batch_size=config['batch_size'],
                                    num_workers=1,
@@ -32,7 +33,8 @@ def train(config:dict, target_speaker):
     valid_dataset = CTCDataset(csv_path=config['csv'], ctc_path=config['ctc_csv'],
                                vocab_path=config['vocab'], text_path=config['text'],
                                target_speaker=target_speaker, train_df=train_df, train_ctc_df = train_ctc_df,
-                               loss_type=config['loss']['type'], return_length=config['return_length'])
+                               loss_type=config['loss']['type'], return_length=config['return_length'],
+                               sort_by_length=False)
     valid_loader = data.DataLoader(dataset=valid_dataset,
                                    batch_size=config['batch_size'],
                                    num_workers=1,
@@ -40,7 +42,7 @@ def train(config:dict, target_speaker):
                                    shuffle=False, 
                                    collate_fn=lambda x: data_processing(x))
 
-    lite.traindata_set = train_dataset
+    #lite.traindata_set = train_dataset
     
     callbacks = [
         pl.callbacks.ModelCheckpoint( **config['checkpoint'])
