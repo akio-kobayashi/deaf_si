@@ -7,9 +7,11 @@ from typing import Tuple
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from einops import rearrange
 from smile_model import OrdinalRegressionModel
+from smile_extra_models import CornModel, AttentionCornModel, AttentionOrdinalRegressionModel
 import smile_model
 import math
 import coral_loss
+import corn_loss
 import os, sys
 
 '''
@@ -20,7 +22,18 @@ class LitOrd(pl.LightningModule):
         super().__init__()
         self.config = config
 
-        self.model = OrdinalRegressionModel(**config['model'])
+        #self.model = OrdinalRegressionModel(**config['model'])
+        model_cfg = config['model'].copy()
+        class_name = model_cfg.pop('class_name', 'OrdinalRegressionModel')
+        model_map = {
+            'OrdinalRegressionModel': OrdinalRegressionModel,
+            'AttentionOrdinalRegressionModel': AttentionOrdinalRegressionModel,
+            'CornModel': CornModel,
+            'AttentionCornModel': AttentionCornModel,
+        }
+        ModelClass = model_map[class_name]
+        self.model = ModelClass(**model_cfg)
+        
         self.save_hyperparameters()
         self.num_correct = self.num_total = 0
         
@@ -32,7 +45,10 @@ class LitOrd(pl.LightningModule):
         mfcc, smile, labels, ranks, lengths = batch
 
         logits = self.forward(mfcc, smile, lengths)
-        loss = coral_loss.coral_loss(logits, labels)
+        if isinstance(self.model, CornModel):
+            loss = corn_loss.corn_loss(logits, labels)
+        else:
+          loss = coral_loss.coral_loss(logits, labels)
         self.log_dict({'loss': loss.item()})
 
         return loss
@@ -43,7 +59,10 @@ class LitOrd(pl.LightningModule):
 
         with torch.no_grad():
             logits = self.forward(mfcc, smile, lengths)
-            loss = coral_loss.coral_loss(logits, labels)
+            if isinstance(self.model, CornModel):
+              loss = corn_loss.corn_loss(logits, labels)
+            else:
+              loss = coral_loss.coral_loss(logits, labels)
             self.log_dict({'valid_loss': loss})
             predicted = smile_model.logits_to_label(logits)
             self.num_correct += (predicted == ranks).sum().item()

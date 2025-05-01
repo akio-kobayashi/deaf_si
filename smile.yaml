@@ -48,6 +48,7 @@ scheduler:
 
 # Model hyperparameters
 model:
+  class_name: OrdinalRegressionModel
   num_mfcc: 40
   num_smile_feats: 88
   gru_hidden_dim: 64
@@ -56,7 +57,7 @@ model:
   dropout_rate: 0.3
   use_mfcc: ${USE_MFCC}
   use_smile: ${USE_SMILE}
-
+  n_heads: 4
 # Final model export path
 output_path: "model.pt"
 
