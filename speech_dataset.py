@@ -101,7 +101,7 @@ def data_processing(data:Tuple[Tensor,int]) -> Tuple[Tensor, Tensor]:
     if loss_type == 'kappa':
         values = torch.from_numpy(np.array(values)).clone().to(torch.int64)
     else:
-        values = torch.from_numpy(np.array(intelligibilities)).clone().float()
+        values = torch.from_numpy(np.array(values)).clone().float()
 
     if len(lengths) == 0:
         lengths = None

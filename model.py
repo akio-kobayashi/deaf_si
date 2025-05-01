@@ -90,5 +90,8 @@ if __name__ == '__main__':
     x = torch.randn(4, 16_000 * 5)
 
     y = model(x)
-    print(y.shape)
+    dot = torchviz.make_dot(y, params=dict(model.named_parameters()))
+    dot.format = 'eps'
+    dot.render('network_structure')
+    #print(y.shape)
     

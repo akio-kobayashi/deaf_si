@@ -22,7 +22,7 @@ class LightningSolver(pl.LightningModule):
             if config['loss']['type'] == 'mse':
              self.loss = nn.MSELoss()
             else:
-                self.loss = nn.HuberLoss(config['loss']['delta'])
+                self.loss = nn.HuberLoss(delta=config['loss']['delta'])
         self.save_hyperparameters()
 
     def forward(self, wave:Tensor, lengths:list) -> Tensor:

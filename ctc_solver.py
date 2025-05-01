@@ -25,7 +25,7 @@ class LightningSolverCTC(pl.LightningModule):
             if config['loss']['type'] == 'mse':
              self.loss = nn.MSELoss()
             else:
-                self.loss = nn.HuberLoss(config['loss']['delta'])
+                self.loss = nn.HuberLoss(delta=config['loss']['delta'])
 
         self.ctc_loss = nn.CTCLoss()
         self.weight = config['ctc_weight']

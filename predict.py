@@ -26,12 +26,11 @@ def predict(config:dict, target_speaker, output_csv):
     files, intelligiblities = [], [] 
     with torch.no_grad():
         df = pd.read_csv(config['csv']).query('speaker==@target_speaker')
-
+        df2 = pd.read_csv(config['csv']).query('speaker!=@target_speaker')
         mean, std = 0., 1.
         if config['loss']['type'] != 'kappa':
-            mean = df['intelligibility'].mean()
-            std = df['intelligibility'].std()
-
+            value_mean = df2['intelligibility'].mean()
+            value_std = df2['intelligibility'].std()
         for idx, row in df.iterrows():
             wave, sr = torchaudio.load(row['path'])
             std, mean = torch.std_mean(wave, dim=-1)
@@ -43,7 +42,7 @@ def predict(config:dict, target_speaker, output_csv):
             #wave = rearrange(wave, '(b c) t -> b c t', b=1)
             pred = lite.forward(wave.cuda(), lengths)
             if config['loss']['type'] != 'kappa':
-                unnorm = pred.item() * std + mean
+                unnorm = pred.item() * value_std + value_mean
                 predicts.append(unnorm)
                 targets.append(float(row['intelligibility']))
             else:
