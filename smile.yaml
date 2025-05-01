@@ -1,5 +1,5 @@
 # Paths and data settings
-trin_path: "smile/${SPEAKER}_train.csv"
+train_path: "smile/${SPEAKER}_train.csv"
 valid_path: "smile/${SPEAKER}_valid.csv"
 stat_path: "./stats.pt"
 batch_size: 4
@@ -35,9 +35,9 @@ checkpoint:
 
 # Optimizer settings
 optimizer:
-  lr: 1e-4
+  lr: 1.e-4
   betas: [0.9, 0.999]
-  weight_decay: 1e-6
+  weight_decay: 1.e-6
 
 # LR scheduler (ReduceLROnPlateau)
 scheduler:
