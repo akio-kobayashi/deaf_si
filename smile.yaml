@@ -1,52 +1,64 @@
-# data
-train_path: "smile/${SPEAKER}_train.csv"
+# Paths and data settings
+trin_path: "smile/${SPEAKER}_train.csv"
 valid_path: "smile/${SPEAKER}_valid.csv"
-stat_path: ./stats.pt
+stat_path: "./stats.pt"
 batch_size: 4
 epochs: 50
 
-# process
+# DataLoader / preprocessing
 process:
   batch_size: 4
   num_workers: 0
 
-# trainer
+# Ablation settings
+exclude_smile_cats: ${EXCLUDE_SMILE_CATS}      # eGeMAPSv02 カテゴリ名のリスト (例: ["F0","Energy"])
+
+# Trainer settings
 trainer:
   max_epochs: 50
-  profiler: 'simple'
+  profiler: "simple"
 
-# logger
+# Logger (TensorBoard)
 logger:
-  save_dir: '/media/akio/hdd1/si_model/smile_model/${SPEAKER}'
+  save_dir: "/media/akio/hdd1/si_model/${TARGET}/${SPEAKER}"
+  name: "lightning_logs"
   version: 1
-  name: 'lightning_logs'
 
-# checkpoint
+# Checkpoint callback
 checkpoint:
-  monitor: 'valid_acc'
-  filename: 'checkpoint_{epoch}-{step}-{valid_acc:.3f}'
-  save_last: True
+  monitor: "valid_acc"
+  filename: "checkpoint_{epoch}-{step}-{valid_acc:.3f}"
+  save_last: true
   save_top_k: 1
-  mode: 'max'
+  mode: "max"
   every_n_epochs: 1
 
-# generator optimizer
+# Optimizer settings
 optimizer:
-  lr: 1.e-4
-  betas:
-    - 0.9
-    - 0.999
-  weight_decay: 1.e-6
+  lr: 1e-4
+  betas: [0.9, 0.999]
+  weight_decay: 1e-6
 
+# LR scheduler (ReduceLROnPlateau)
 scheduler:
-  mode: 'min'
+  mode: "min"
   factor: 0.99
   patience: 5
-  verbose: True
+  verbose: true
+
+# Model hyperparameters
 model:
   num_mfcc: 40
   num_smile_feats: 88
   gru_hidden_dim: 64
   embed_dim: 64
   num_classes: 9
-output_path: model.pt
+  dropout_rate: 0.3
+  use_mfcc: ${USE_MFCC}
+  use_smile: ${USE_SMILE}
+
+# Final model export path
+output_path: "model.pt"
+
+# output CSV for validation set
+output_csv: "/media/akio/hdd1/si_model/${TARGET}/${SPEAKER}/output.csv"

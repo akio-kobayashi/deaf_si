@@ -70,4 +70,3 @@ class LitOrd(pl.LightningModule):
                                  self.config['output_path']
                                  )
         torch.save(self.model.to('cpu').state_dict(), full_path)
-
