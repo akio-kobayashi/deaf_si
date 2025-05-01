@@ -8,7 +8,7 @@ do
     if [ -e si_model/$target_speaker/version_1/checkpoints/last.ckpt ]; then
 	ckpt=`ls si_model/$target_speaker/version_1/checkpoints/*.ckpt |grep -v last`
 	echo $ckpt
-	#python3 predict.py --config config.yaml --ckpt $ckpt --target_speaker $target_speaker \
-	#	--output_csv si_model/$target_speaker/version_1/checkpoints/output.csv
+	python3 predict.py --config config.yaml --ckpt $ckpt --target_speaker $target_speaker \
+		--output_csv si_model/$target_speaker/version_1/checkpoints/output.csv
     fi
 done
