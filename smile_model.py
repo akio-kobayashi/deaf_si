@@ -1,94 +1,136 @@
+# CORALベース順序回帰モデル（SMIL/MFCC対応・9段階, 重み共有実装）
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 def logits_to_label(logits):
     """
-    CORAL の出力（logits）をラベルに変換
-    logits: (batch, num_classes - 1) のシグモイド前の値
+    CORAL の出力（logits）をラベルに変換．
+    logits: Tensor of shape (batch_size, num_classes - 1) のシグモイド前の値
+    Returns:
+        Tensor of shape (batch_size,) with values in [1, num_classes]
     """
-    probs = torch.sigmoid(logits)  # シグモイド関数で確率に変換
-    predictions = (probs > 0.5).sum(dim=1) + 1  # 超えたしきい値の数 + 1
-    return predictions
+    probs = torch.sigmoid(logits)
+    # 各閾値を超えた回数 + 1 が予測ラベル
+    return (probs > 0.5).sum(dim=1) + 1
+
 
 class OrdinalRegressionModel(nn.Module):
-    def __init__(self, num_mfcc, num_smile_feats, gru_hidden_dim, embed_dim, num_classes, dropout_rate=0.3):
+    def __init__(self,
+                 num_mfcc=40,
+                 num_smile_feats=88,
+                 gru_hidden_dim=64,
+                 embed_dim=64,
+                 num_classes=9,
+                 dropout_rate=0.3,
+                 use_mfcc=True,
+                 use_smile=True):
         """
-        num_mfcc: MFCCの次元数
-        num_smile_feats: OpenSMILEの特徴量の次元数
-        gru_hidden_dim: Bi-GRUの隠れ層の次元数
-        embed_dim: OpenSMILE特徴量の埋め込み次元
-        num_classes: 分類クラス数（例: 1~5なら num_classes=5）
-        """
-        super(OrdinalRegressionModel, self).__init__()
-        
-        # Bi-GRU: 可変長のMFCCを固定次元のベクトルに変換
-        self.gru = nn.GRU(num_mfcc, gru_hidden_dim, num_layers=1, batch_first=True, bidirectional=True)
-        self.gru_dropout = nn.Dropout(dropout_rate)
-        
-        # OpenSMILE特徴量を埋め込みベクトルに変換
-        self.smile_fc = nn.Linear(num_smile_feats, embed_dim)
-        self.smile_dropout = nn.Dropout(dropout_rate)
-        
-        # 結合した特徴ベクトルを処理するFeedforward層
-        self.fc1 = nn.Linear(gru_hidden_dim * 2 + embed_dim, 128)
-        self.fc1_dropout = nn.Dropout(dropout_rate)
-        self.fc2 = nn.Linear(128, num_classes - 1)  # CORALでは num_classes - 1
+        CORAL実装: 重み共有 + 閾値ベクトル
 
-    '''
-    def forward(self, mfcc, lengths, smile_feats):
+        Args:
+            num_mfcc (int): MFCC の次元数 (例: 40)
+            num_smile_feats (int): OpenSMILE 特徴量の次元数 (例: 88)
+            gru_hidden_dim (int): Bi-GRU の隠れ層次元
+            embed_dim (int): SMIL 特徴量埋め込み次元
+            num_classes (int): 順序尺度のクラス数 (例: 9)
+            dropout_rate (float): ドロップアウト率
+            use_mfcc (bool): MFCC を入力に利用するか
+            use_smile (bool): SMIL 特徴量を入力に利用するか
         """
-        mfcc: (batch, time, num_mfcc) - 可変長のMFCC特徴
-        lengths: (batch, ) - 各バッチの実際の長さ（パディング処理対策）
-        smile_feats: (batch, num_smile_feats) - OpenSMILE特徴量
+        super().__init__()
+        self.use_mfcc = use_mfcc
+        self.use_smile = use_smile
+        self.num_classes = num_classes
+
+        if self.use_mfcc:
+            self.gru = nn.GRU(
+                num_mfcc,
+                gru_hidden_dim,
+                batch_first=True,
+                bidirectional=True
+            )
+            self.gru_dropout = nn.Dropout(dropout_rate)
+        if self.use_smile:
+            self.smile_fc = nn.Linear(num_smile_feats, embed_dim)
+            self.smile_dropout = nn.Dropout(dropout_rate)
+
+        # 特徴結合後の次元
+        input_dim = (
+            (gru_hidden_dim * 2) if use_mfcc else 0
+        ) + (
+            embed_dim if use_smile else 0
+        )
+
+        # 共有ユニット
+        self.shared_fc = nn.Linear(input_dim, 1)
+        self.dropout = nn.Dropout(dropout_rate)
+        # 閾値パラメータ (num_classes - 1)
+        self.thresholds = nn.Parameter(torch.zeros(num_classes - 1))
+
+    def extract_features(self, mfcc=None, lengths=None, smile_feats=None):
         """
-        # --- 1. Bi-GRUによるMFCC処理 ---
-        packed = nn.utils.rnn.pack_padded_sequence(mfcc, lengths.cpu(), batch_first=True, enforce_sorted=False)
-        _, hidden = self.gru(packed)  # hidden: (2, batch, hidden_dim)
-        hidden_forward = hidden[0, :, :]
-        hidden_backward = hidden[1, :, :]
-        gru_output = torch.cat([hidden_forward, hidden_backward], dim=1)  # (batch, gru_hidden_dim * 2)
+        入力特徴量を処理して結合ベクトルを返す
 
-        # --- 2. OpenSMILE特徴量の埋め込み ---
-        smile_embed = F.relu(self.smile_fc(smile_feats))  # (batch, embed_dim)
+        Args:
+            mfcc (Tensor): MFCC 系列, shape = (batch_size, seq_len, num_mfcc)
+            lengths (Tensor): 各系列の長さ, shape = (batch_size,)
+            smile_feats (Tensor): SMIL 特徴量, shape = (batch_size, num_smile_feats)
 
-        # --- 3. 特徴の結合 & Feedforward ---
-        combined_features = torch.cat([gru_output, smile_embed], dim=1)  # (batch, gru_hidden_dim*2 + embed_dim)
-        x = F.relu(self.fc1(combined_features))
-        logits = self.fc2(x)  # (batch, num_classes - 1)
-        
+        Returns:
+            Tensor: 結合後特徴量, shape = (batch_size, input_dim)
+        """
+        parts = []
+        if self.use_mfcc:
+            packed = nn.utils.rnn.pack_padded_sequence(
+                mfcc,
+                lengths.cpu(),
+                batch_first=True,
+                enforce_sorted=False
+            )
+            _, hidden = self.gru(packed)
+            # 双方向GRUの隠れ状態を結合
+            h_fwd, h_bwd = hidden[0], hidden[1]
+            out_gru = torch.cat([h_fwd, h_bwd], dim=1)
+            parts.append(self.gru_dropout(out_gru))
+        if self.use_smile:
+            embed = F.relu(self.smile_fc(smile_feats))
+            parts.append(self.smile_dropout(embed))
+        return torch.cat(parts, dim=1)
+
+    def forward(self, mfcc=None, lengths=None, smile_feats=None):
+        """
+        ロジット値を計算して返す
+
+        Args:
+            mfcc (Tensor): MFCC 系列, shape = (batch_size, seq_len, num_mfcc)
+            lengths (Tensor): 各系列の長さ, shape = (batch_size,)
+            smile_feats (Tensor): SMIL 特徴量, shape = (batch_size, num_smile_feats)
+
+        Returns:
+            Tensor: ロジット, shape = (batch_size, num_classes - 1)
+        """
+        # 特徴抽出
+        x = self.extract_features(mfcc, lengths, smile_feats)
+        # 共有線形層 g = shared_fc(x)
+        g = self.shared_fc(x)           # (batch_size, 1)
+        g = self.dropout(g)
+        # 閾値を引く: g を各閾値に対して繰り返す
+        logits = g.repeat(1, self.num_classes - 1) - self.thresholds.view(1, -1)
         return logits
-    '''
-    
-    def extract_combined_features(self, mfcc, lengths, smile_feats):
-        packed = nn.utils.rnn.pack_padded_sequence(mfcc, lengths.cpu(), batch_first=True, enforce_sorted=False)
-        _, hidden = self.gru(packed)  # hidden: (2, batch, hidden_dim)
-        hidden_forward = hidden[0, :, :]
-        hidden_backward = hidden[1, :, :]
-        gru_output = torch.cat([hidden_forward, hidden_backward], dim=1)  # (batch, gru_hidden_dim * 2)
-        gru_output = self.gru_dropout(gru_output)
-        
-        # --- 2. OpenSMILE特徴量の埋め込み ---
-        smile_embed = F.relu(self.smile_fc(smile_feats))  # (batch, embed_dim)
-        smile_embed = self.smile_dropout(smile_embed)
-        
-        # --- 3. 特徴の結合 & Feedforward ---
-        combined_features = torch.cat([gru_output, smile_embed], dim=1)  # (batch, gru_hidden_dim*2 + embed_dim)
-        return combined_features
 
-    def forward(self, mfcc, lengths, smile_feats):
-        combined_features = self.extract_combined_features(mfcc, lengths, smile_feats)
-        x = F.relu(self.fc1(combined_features))
-        x = self.fc1_dropout(x)
-        logits = self.fc2(x)  # (batch, num_classes - 1)
-        
-        return logits
-        
-    
-    def save_model(self):
-        full_path = os.path.join(self.config['logger']['save_dir'],
-                                 config['logger']['name'],
-                                 'version_' + str(config['logger']['version']),
-                                 config['output_path']
-                                 )
-        torch.save(self.model.to('cpu').state_dict(), full_path)
+    def predict(self, mfcc=None, lengths=None, smile_feats=None):
+        """
+        ラベル予測まで一貫実行
+
+        Args:
+            mfcc (Tensor): MFCC 系列, shape = (batch_size, seq_len, num_mfcc)
+            lengths (Tensor): 各系列の長さ, shape = (batch_size,)
+            smile_feats (Tensor): SMIL 特徴量, shape = (batch_size, num_smile_feats)
+
+        Returns:
+            Tensor: 予測ラベル, shape = (batch_size,) with values in [1, num_classes]
+        """
+        logits = self.forward(mfcc, lengths, smile_feats)
+        return logits_to_label(logits)
