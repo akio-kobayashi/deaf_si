@@ -4,23 +4,25 @@ import torch.nn.functional as F
 def corn_loss(logits, labels):
     """
     logits: Tensor of shape (batch, K-1)
-        出力は「条件付きロジット」g_k(x) = logit for P(y>k | y>k-1)
     labels: Tensor of shape (batch,) with values 1..K
     """
     batch, K1 = logits.shape
     loss = 0.0
     for k in range(K1):
-        # このタスクに含めるサンプルのマスク
-        # P(y>k|y>k-1) を学習するのはラベルが k以上のサンプルのみ
-        mask = (labels > k).float()  # y>k-1 のサンプルを選択
+        # このタスクに含めるサンプルのマスク（float型）
+        mask = (labels > k).float()  # shape: [B]
         if mask.sum() == 0:
             continue
-        # 条件付き正解ラベル
-        # たとえば k=0 (P(y>1)) なら labels>1, k=1 (P(y>2|y>1)) なら labels>2...
-        target = (labels > (k+1)).float()
-        # ロジットは全サンプル分出ているので、マスクをかけて算出
-        logit_k = logits[:, k]
-        # BCE＋マスク平均
-        loss_k = F.binary_cross_entropy_with_logits(logit_k, target, reduction='none')
-        loss += (loss_k * mask).sum() / mask.sum()
+        # 条件付き正解ラベル（float型）
+        target_k = (labels > (k + 1)).float()  # shape: [B]
+        logit_k = logits[:, k]  # shape: [B]
+        
+        # 有効サンプルのみ取り出して損失を計算
+        logit_k = logit_k[mask.bool()]
+        target_k = target_k[mask.bool()]
+        
+        loss_k = F.binary_cross_entropy_with_logits(logit_k, target_k, reduction='mean')
+        loss += loss_k
+
     return loss / K1
+
