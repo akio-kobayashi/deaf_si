@@ -1,23 +1,30 @@
 import torch
 import torch.nn.functional as F
 
+import torch
+import torch.nn.functional as F
+
 def corn_loss(logits, labels):
     """
-    logits: Tensor of shape (batch, K-1)
-    labels: Tensor of shape (batch,) with values 1..K
+    logits: Tensor of shape (B, K-1)
+    labels: Tensor of shape (B,) with values in 1..K
     """
-    batch, K1 = logits.shape
+    batch_size, K_minus_1 = logits.shape
     loss = 0.0
-    for k in range(K1):
-        # このタスクに含めるサンプルのマスク（float型）
-        mask = (labels > k)
+
+    for k in range(K_minus_1):
+        # 各しきい値における有効サンプルマスク
+        mask = (labels > k)  # shape: (B,) bool
+
+        # 有効サンプルがない場合はスキップ
         if mask.sum() == 0:
             continue
 
-        target_k = (labels > (k + 1)).float()
-        logit_k = logits[:, k]
+        # P(y > k+1 | y > k)
+        target_k = (labels > (k + 1)).float()  # shape: (B,)
+        logit_k = logits[:, k]  # shape: (B,)
 
-        # 次元保証（1次元でなければインデクスエラーになるので）
+        # 明示的に1次元以上にしておく（安全策）
         if logit_k.ndim == 0:
             logit_k = logit_k.unsqueeze(0)
         if target_k.ndim == 0:
@@ -25,12 +32,15 @@ def corn_loss(logits, labels):
         if mask.ndim == 0:
             mask = mask.unsqueeze(0)
 
-        logit_k = logit_k[mask]
-        target_k = target_k[mask]
+        # マスクされたサンプルだけを抽出
+        logit_k_masked = logit_k[mask]
+        target_k_masked = target_k[mask]
 
-        loss_k = F.binary_cross_entropy_with_logits(logit_k, target_k, reduction='mean')
+        # 損失（平均）
+        loss_k = F.binary_cross_entropy_with_logits(logit_k_masked, target_k_masked, reduction='mean')
         loss += loss_k
 
-    return loss / K1
+    return loss / K_minus_1
+
 
 
