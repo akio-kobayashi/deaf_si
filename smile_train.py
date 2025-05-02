@@ -103,7 +103,8 @@ def load_config(path: str)-> dict:
         TARGET=os.getenv('TARGET', ''),
         EXCLUDE_SMILE_CATS=os.getenv('EXCLUDE_SMILE_CATS', '[]'),
         USE_SMILE=os.getenv('USE_SMILE', 'true'),
-        USE_MFCC=os.getenv('USE_MFCC', 'true')
+        USE_MFCC=os.getenv('USE_MFCC', 'true'),
+        MODEL=os.getenv('MODEL', '')
     )
     cfg = yaml.safe_load(rendered)
     if not isinstance(cfg, dict):

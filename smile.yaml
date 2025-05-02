@@ -48,7 +48,7 @@ scheduler:
 
 # Model hyperparameters
 model:
-  class_name: OrdinalRegressionModel
+  class_name: ${MODEL}
   num_mfcc: 40
   num_smile_feats: 88
   gru_hidden_dim: 64

@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from model import OrdinalRegressionModel
+from smile_model import OrdinalRegressionModel
 
 
 class AttentionOrdinalRegressionModel(OrdinalRegressionModel):
