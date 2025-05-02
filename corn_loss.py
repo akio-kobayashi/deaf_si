@@ -10,19 +10,27 @@ def corn_loss(logits, labels):
     loss = 0.0
     for k in range(K1):
         # このタスクに含めるサンプルのマスク（float型）
-        mask = (labels > k).float()  # shape: [B]
+        mask = (labels > k)
         if mask.sum() == 0:
             continue
-        # 条件付き正解ラベル（float型）
-        target_k = (labels > (k + 1)).float()  # shape: [B]
-        logit_k = logits[:, k]  # shape: [B]
-        
-        # 有効サンプルのみ取り出して損失を計算
-        logit_k = logit_k[mask.bool()]
-        target_k = target_k[mask.bool()]
-        
+
+        target_k = (labels > (k + 1)).float()
+        logit_k = logits[:, k]
+
+        # 次元保証（1次元でなければインデクスエラーになるので）
+        if logit_k.ndim == 0:
+            logit_k = logit_k.unsqueeze(0)
+        if target_k.ndim == 0:
+            target_k = target_k.unsqueeze(0)
+        if mask.ndim == 0:
+            mask = mask.unsqueeze(0)
+
+        logit_k = logit_k[mask]
+        target_k = target_k[mask]
+
         loss_k = F.binary_cross_entropy_with_logits(logit_k, target_k, reduction='mean')
         loss += loss_k
 
     return loss / K1
+
 
