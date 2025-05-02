@@ -32,7 +32,14 @@ class LitOrd(pl.LightningModule):
             'AttentionCornModel': AttentionCornModel,
         }
         ModelClass = model_map[class_name]
-        self.model = ModelClass(**model_cfg)
+        if class_name == 'CornModel' or class_name == 'OrdinalRegressionModel':
+            # 'n_heads' を除いた辞書を渡す
+            filtered_cfg = {k: v for k, v in model_cfg.items() if k != 'n_heads'}
+            self.model = CornModel(**filtered_cfg)
+        else:
+            self.model = ModelClass(**model_cfg)
+
+        #self.model = ModelClass(**model_cfg)
         
         self.save_hyperparameters()
         self.num_correct = self.num_total = 0
