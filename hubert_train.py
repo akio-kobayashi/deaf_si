@@ -9,7 +9,9 @@ import yaml
 from string import Template
 import warnings
 warnings.filterwarnings('ignore')
-
+import torch.multiprocessing as mp
+# Use spawn start method for CUDA compatibility in DataLoader workers
+mp.set_start_method('spawn', force=True)
 # HuBERT用モジュール
 from hubert_dataset import HubertDataset, data_processing
 from hubert_solver import LitHubert
