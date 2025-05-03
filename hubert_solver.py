@@ -34,6 +34,14 @@ class LitHubert(pl.LightningModule):
             'AttentionHubertCornModel': AttentionHubertCornModel,
         }
         ModelClass = model_map[class_name]
+        # Remove unsupported keys based on model type
+        if class_name in ['HubertOrdinalRegressionModel', 'HubertCornModel']:
+            # These don't accept attention parameters
+            model_cfg.pop('embed_dim', None)
+            model_cfg.pop('n_heads', None)
+        elif class_name in ['AttentionHubertOrdinalRegressionModel', 'AttentionHubertCornModel']:
+            # These don't use proj_dim
+            model_cfg.pop('proj_dim', None)
         self.model = ModelClass(**model_cfg)
 
         self.save_hyperparameters()
