@@ -60,11 +60,6 @@ def main(args, config: dict):
         auto_move_batch_to_device=False,
         **config['trainer']
     )
-        callbacks=[checkpoint_cb],
-        logger=logger,
-        num_sanity_val_steps=0,
-        **config['trainer']
-    )
     trainer.fit(
         model=model,
         train_dataloaders=train_loader,
