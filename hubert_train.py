@@ -12,7 +12,7 @@ warnings.filterwarnings('ignore')
 
 # HuBERT用モジュール
 from hubert_dataset import HubertDataset, data_processing
-from lit_hubert_solver import LitHubert
+from hubert_solver import LitHubert
 
 
 def load_config(path: str) -> dict:
