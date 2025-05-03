@@ -41,7 +41,7 @@ def main(args, config: dict):
         batch_size=config['batch_size'],
         shuffle=True,
         num_workers=config['process']['num_workers'],
-        pin_memory=True,
+        pin_memory=False,
         collate_fn=data_processing
     )
 
@@ -51,7 +51,7 @@ def main(args, config: dict):
         batch_size=config['batch_size'],
         shuffle=False,
         num_workers=config['process']['num_workers'],
-        pin_memory=True,
+        pin_memory=False,
         collate_fn=data_processing
     )
 

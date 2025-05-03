@@ -85,7 +85,7 @@ if __name__ == "__main__":
         shuffle=True,
         collate_fn=data_processing,
         num_workers=4,
-        pin_memory=True
+        pin_memory=False
     )
 
     for huberts, labels, ranks, lengths in loader:
