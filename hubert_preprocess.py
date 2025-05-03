@@ -33,12 +33,28 @@ def extract_and_save(
         wav_path = row['path']
         # WAV読み込み
         speech, sr = torchaudio.load(wav_path)
+        # モノラル化
         if speech.size(0) > 1:
             speech = speech.mean(dim=0, keepdim=True)
-        speech = speech.squeeze(0).numpy()
+        # 次元を (T,) に
+        speech = speech.squeeze(0)
+        # 必要に応じてリサンプリング
+        target_sr = extractor.sampling_rate
+        if sr != target_sr:
+            resampler = torchaudio.transforms.Resample(orig_freq=sr, new_freq=target_sr)
+            speech = resampler(speech.unsqueeze(0)).squeeze(0)
+            sr = target_sr
+        # NumPy 配列に変換
+        speech = speech.numpy()
 
         # 特徴抽出
-        inputs = extractor(speech, sampling_rate=sr, return_tensors="pt", padding=True, return_attention_mask=True)
+        inputs = extractor(
+            speech,
+            sampling_rate=sr,
+            return_tensors="pt",
+            padding=True,
+            return_attention_mask=True
+        )
         with torch.no_grad():
             outputs = model(
                 inputs.input_values,
@@ -46,7 +62,7 @@ def extract_and_save(
                 output_hidden_states=True
             )
 
-        # 指定レイヤーの hidden_states
+        # 指定レイヤーの hidden_states を取得
         hs = outputs.hidden_states[layer]  # (1, seq_len, hidden_size)
         hubert_feats = hs.squeeze(0)       # (seq_len, hidden_size)
 
@@ -55,20 +71,31 @@ def extract_and_save(
         feat_path = os.path.join(target_dir, f"{base}_hubert_layer{layer}.pt")
         torch.save({'hubert_feats': hubert_feats}, feat_path)
 
-        # CSV更新
+        # CSV 更新
         df.at[idx, 'feature'] = feat_path
 
-    # 更新後保存
+    # 更新後の保存
     df.to_csv(output_csv, index=False)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Extract HuBERT features from specified layer")
+    parser = argparse.ArgumentParser(
+        description="Extract HuBERT features from specified layer"
+    )
     parser.add_argument("--input_csv", required=True)
     parser.add_argument("--target_dir", required=True)
     parser.add_argument("--output_csv", required=True)
-    parser.add_argument("--model_name", default="rinna/japanese-hubert-base")
-    parser.add_argument("--layer", type=int, default=6)
+    parser.add_argument(
+        "--model_name",
+        default="rinna/japanese-hubert-base",
+        help="HuggingFace model name for Japanese HuBERT"
+    )
+    parser.add_argument(
+        "--layer",
+        type=int,
+        default=-1,
+        help="Hidden_states layer index to extract (negative for from end)"
+    )
     args = parser.parse_args()
 
     extract_and_save(
@@ -78,6 +105,7 @@ def main():
         model_name=args.model_name,
         layer=args.layer
     )
+
 
 if __name__ == '__main__':
     main()
