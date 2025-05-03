@@ -150,6 +150,7 @@ class AttentionCornModel(CornModel):
     """
     def __init__(self, *args, n_heads=4, embed_dim=64, dropout_rate=0.3, **kwargs):
         super().__init__(*args, **kwargs)
+        self.dropout_rate = dropout_rate
         # replace MFCC encoder if use_mfcc
         if self.use_mfcc:
             # project to embed_dim
@@ -175,7 +176,7 @@ class AttentionCornModel(CornModel):
             x = self.transformer(x)
             x = x.transpose(0,1)
             mfcc_feat = x.mean(dim=1)
-            parts.append(F.dropout(mfcc_feat, p=self.transformer_layer.dropout))
+            parts.append(F.dropout(mfcc_feat, p=self.dropout_rate))
         if self.use_smile:
             smile_embed = F.relu(self.smile_fc(smile_feats))
             parts.append(self.smile_dropout(smile_embed))
