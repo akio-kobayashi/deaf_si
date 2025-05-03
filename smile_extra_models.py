@@ -148,7 +148,7 @@ class AttentionCornModel(CornModel):
     CORN model with self-attention on MFCC.
     Inherits CornModel but replaces GRU with Transformer.
     """
-    def __init__(self, *args, n_heads=4, embed_dim=64, dropout_rate=0,3, **kwargs):
+    def __init__(self, *args, n_heads=4, embed_dim=64, dropout_rate=0.3, **kwargs):
         super().__init__(*args, **kwargs)
         # replace MFCC encoder if use_mfcc
         if self.use_mfcc:
