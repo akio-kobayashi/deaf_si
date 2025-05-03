@@ -164,8 +164,11 @@ class AttentionCornModel(CornModel):
             # adjust input feature dim
             new_input = embed_dim + (embed_dim if self.use_smile else 0)
             # update classifiers first layer
-            for i in range(len(self.classifiers)):
-                self.classifiers[i][0] = nn.Linear(new_input, new_input//2)
+            for clf in self.classifiers:
+                # 1層目の線形変換を置き換え
+                clf[0] = nn.Linear(new_input, new_input//2)
+                # 4層目（最後の線形変換）も置き換え
+                clf[3] = nn.Linear(new_input//2, 1)
 
     def extract_features(self, mfcc=None, lengths=None, smile_feats=None):
         parts = []
