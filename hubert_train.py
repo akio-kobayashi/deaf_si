@@ -55,6 +55,14 @@ def main(args, config: dict):
         callbacks=[checkpoint_cb],
         logger=logger,
         num_sanity_val_steps=0,
+        accelerator='gpu',
+        devices=1,
+        auto_move_batch_to_device=False,
+        **config['trainer']
+    )
+        callbacks=[checkpoint_cb],
+        logger=logger,
+        num_sanity_val_steps=0,
         **config['trainer']
     )
     trainer.fit(
