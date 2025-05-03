@@ -161,7 +161,7 @@ class AttentionCornModel(CornModel):
             )
             self.transformer = nn.TransformerEncoder(self.transformer_layer, num_layers=1)
             # adjust input feature dim
-            new_input = embed_dim + (kwargs['embed_dim'] if self.use_smile else 0)
+            new_input = embed_dim + (embed_dim if self.use_smile else 0)
             # update classifiers first layer
             for i in range(len(self.classifiers)):
                 self.classifiers[i][0] = nn.Linear(new_input, new_input//2)
