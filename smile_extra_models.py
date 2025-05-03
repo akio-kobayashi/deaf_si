@@ -148,7 +148,7 @@ class AttentionCornModel(CornModel):
     CORN model with self-attention on MFCC.
     Inherits CornModel but replaces GRU with Transformer.
     """
-    def __init__(self, *args, n_heads=4, embed_dim=64, **kwargs):
+    def __init__(self, *args, n_heads=4, embed_dim=64, dropout_rate=0,3, **kwargs):
         super().__init__(*args, **kwargs)
         # replace MFCC encoder if use_mfcc
         if self.use_mfcc:
@@ -157,7 +157,7 @@ class AttentionCornModel(CornModel):
             self.transformer_layer = nn.TransformerEncoderLayer(
                 d_model=embed_dim,
                 nhead=n_heads,
-                dropout=kwargs.get('dropout_rate', 0.3)
+                dropout=dropout_rate
             )
             self.transformer = nn.TransformerEncoder(self.transformer_layer, num_layers=1)
             # adjust input feature dim
