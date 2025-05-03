@@ -55,7 +55,6 @@ def main(args, config: dict):
         callbacks=[checkpoint_cb],
         logger=logger,
         num_sanity_val_steps=0,
-        dataloader_pin_memory=False,
         **config['trainer']
     )
     trainer.fit(
