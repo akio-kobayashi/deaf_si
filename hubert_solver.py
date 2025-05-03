@@ -24,7 +24,7 @@ class LitHubert(pl.LightningModule):
         super().__init__()
         self.config = config
 
-        # モデル選択
+        # Prepare model configuration
         model_cfg = config['model'].copy()
         class_name = model_cfg.pop('class_name', 'HubertOrdinalRegressionModel')
         model_map = {
@@ -34,30 +34,26 @@ class LitHubert(pl.LightningModule):
             'AttentionHubertCornModel': AttentionHubertCornModel,
         }
         ModelClass = model_map[class_name]
+
         # Remove unsupported keys based on model type
         if class_name in ['HubertOrdinalRegressionModel', 'HubertCornModel']:
-            # These don't accept attention parameters
             model_cfg.pop('embed_dim', None)
             model_cfg.pop('n_heads', None)
         elif class_name in ['AttentionHubertOrdinalRegressionModel', 'AttentionHubertCornModel']:
-            # These don't use proj_dim
             model_cfg.pop('proj_dim', None)
-        self.model = ModelClass(**model_cfg)
 
+        self.model = ModelClass(**model_cfg)
         self.save_hyperparameters()
+
         self.num_correct = 0
         self.num_total = 0
 
     def forward(self, hubert_feats: Tensor) -> Tensor:
-        """
-        Predict logits for given HuBERT embeddings.
-        """
         return self.model(hubert_feats)
 
     def training_step(self, batch, batch_idx: int) -> Tensor:
         huberts, labels, ranks, lengths = batch
         logits = self.forward(huberts)
-        # CORN or CORAL の損失を選択
         if isinstance(self.model, (HubertCornModel, AttentionHubertCornModel)):
             loss = corn_loss.corn_loss(logits, labels)
         else:
@@ -73,8 +69,6 @@ class LitHubert(pl.LightningModule):
         else:
             loss = coral_loss.coral_loss(logits, labels)
         self.log('val_loss', loss, prog_bar=True)
-
-        # 精度計算
         probs = torch.sigmoid(logits)
         preds = (probs > 0.5).sum(dim=1) + 1
         self.num_correct += (preds == ranks).sum().item()
@@ -87,9 +81,23 @@ class LitHubert(pl.LightningModule):
         self.num_total = 0
 
     def configure_optimizers(self):
-        optimizer = torch.optim.Adam(self.model.parameters(), **self.config['optimizer'])
+        # Convert optimizer hyperparameters to correct types
+        opt_cfg = self.config['optimizer'].copy()
+        opt_cfg['lr'] = float(opt_cfg.get('lr', 0.001))
+        if 'weight_decay' in opt_cfg:
+            opt_cfg['weight_decay'] = float(opt_cfg['weight_decay'])
+        if 'betas' in opt_cfg:
+            opt_cfg['betas'] = tuple(float(b) for b in opt_cfg['betas'])
+        optimizer = torch.optim.Adam(self.model.parameters(), **opt_cfg)
+
+        # Convert scheduler params
+        sched_cfg = self.config['scheduler'].copy()
+        if 'factor' in sched_cfg:
+            sched_cfg['factor'] = float(sched_cfg['factor'])
+        if 'patience' in sched_cfg:
+            sched_cfg['patience'] = int(sched_cfg['patience'])
         scheduler = {
-            'scheduler': ReduceLROnPlateau(optimizer, **self.config['scheduler']),
+            'scheduler': ReduceLROnPlateau(optimizer, **sched_cfg),
             'monitor': 'val_loss'
         }
         return [optimizer], [scheduler]
