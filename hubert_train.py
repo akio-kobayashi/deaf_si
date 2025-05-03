@@ -57,7 +57,6 @@ def main(args, config: dict):
         num_sanity_val_steps=0,
         accelerator='gpu',
         devices=1,
-        auto_move_batch_to_device=False,
         **config['trainer']
     )
     trainer.fit(
