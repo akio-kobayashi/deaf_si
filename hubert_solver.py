@@ -53,6 +53,10 @@ class LitHubert(pl.LightningModule):
 
     def training_step(self, batch, batch_idx: int) -> Tensor:
         huberts, labels, ranks, lengths = batch
+        huberts = huberts.to(self.device)
+        labels = labels.to(self.device)
+        ranks = ranks.to(self.device)
+        lengths = lengths.to(self.device)
         logits = self.forward(huberts)
         if isinstance(self.model, (HubertCornModel, AttentionHubertCornModel)):
             loss = corn_loss.corn_loss(logits, labels)

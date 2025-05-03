@@ -32,8 +32,8 @@ class HubertDataset(torch.utils.data.Dataset):
     def __getitem__(self, idx: int) -> Tuple[Tensor, int]:
         row = self.df.iloc[idx]
         # torch.save で { 'hubert_feats': Tensor[T, D] } の形式で保存している前提
-        data = torch.load(row['feature'], map_location=self.device)
-        hubert = data['hubert_feats'].to(self.device)  # shape=(T, hubert_dim)
+        data = torch.load(row['feature'], map_location='cpu')
+        hubert = data['hubert_feats']  # shape=(T, hubert_dim)
 
         rank = self.score_to_rank(row['intelligibility'])
         return hubert, rank
