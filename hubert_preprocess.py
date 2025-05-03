@@ -30,7 +30,7 @@ def extract_and_save(
     model.eval()
 
     for idx, row in tqdm(df.iterrows(), total=len(df), desc="Extracting HuBERT features"):
-        wav_path = row['source']
+        wav_path = row['path']
         # WAV読み込み
         speech, sr = torchaudio.load(wav_path)
         if speech.size(0) > 1:
@@ -38,7 +38,7 @@ def extract_and_save(
         speech = speech.squeeze(0).numpy()
 
         # 特徴抽出
-        inputs = extractor(speech, sampling_rate=sr, return_tensors="pt", padding=True)
+        inputs = extractor(speech, sampling_rate=sr, return_tensors="pt", padding=True, return_attention_mask=True)
         with torch.no_grad():
             outputs = model(
                 inputs.input_values,
@@ -68,7 +68,7 @@ def main():
     parser.add_argument("--target_dir", required=True)
     parser.add_argument("--output_csv", required=True)
     parser.add_argument("--model_name", default="rinna/japanese-hubert-base")
-    parser.add_argument("--layer", type=int, default=-1)
+    parser.add_argument("--layer", type=int, default=6)
     args = parser.parse_args()
 
     extract_and_save(
