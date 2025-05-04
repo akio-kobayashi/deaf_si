@@ -30,10 +30,10 @@ def run_clmm(data_path: str, output_path: str):
     trace = model.fit(
         draws=1000,
         tune=1000,
-        chains=1,
-        cores=1,
-        random_seed=None  # Avoid numpy RNG spawn issue
+        chains=1,   # ← spawn 問題を避けるため 1 本に固定
+        cores=1
     )
+
 
     # 5. Extract summary and save to CSV
     summary = az.summary(
