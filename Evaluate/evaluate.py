@@ -31,7 +31,8 @@ def run_clmm(data_path: str, output_path: str):
         draws=1000,
         tune=1000,
         chains=1,
-        cores=1
+        cores=1,
+        random_seed=None  # Avoid numpy RNG spawn issue
     )
 
     # 5. Extract summary and save to CSV
