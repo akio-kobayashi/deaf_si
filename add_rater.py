@@ -27,6 +27,3 @@ df['rater'] = df['key'].map(mapping)
 # ——— 出力CSVに保存 ———
 df.to_csv(output_csv, index=False)
 print(f"Rater列を追加したデータを '{output_csv}' に保存しました。")
-
-# ——— サンプルを表示 ———
-tools.display_dataframe_to_user(name="統合データサンプル", dataframe=df.head())
