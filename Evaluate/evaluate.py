@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 evaluate.py
 
@@ -44,7 +45,7 @@ def run_clmm(data_path: str, output_path: str):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Fit CLMM with Bambi')
     parser.add_argument(
-        '--data', default='../merge_base_rater.csv',
+        '--data', default='merge_base_rater.csv',
         help='Path to input CSV file'
     )
     parser.add_argument(
@@ -53,5 +54,3 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
     run_clmm(args.data, args.out)
-
-
