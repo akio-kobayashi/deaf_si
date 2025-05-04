@@ -11,10 +11,10 @@ import bambi as bmb
 import arviz as az
 
 def run_clmm(data_path: str, output_path: str):
-    # 1. データ読み込み
+    # 1. Load data
     df = pd.read_csv(data_path)
 
-    # 2. 順序カテゴリへの変換（1.0, 1.5, …, 5.0）
+    # 2. Convert to ordered categorical target
     score_levels = [1.0 + 0.5 * i for i in range(9)]
     df['target'] = pd.Categorical(
         df['target'].astype(float),
@@ -22,14 +22,20 @@ def run_clmm(data_path: str, output_path: str):
         ordered=True
     )
 
-    # 3. モデル式の定義
+    # 3. Define formula
     formula = 'target ~ hearing_status + gender + (1|speaker) + (1|rater)'
 
-    # 4. モデル構築と推定
+    # 4. Fit model with Bambi (single chain to avoid RNG spawn issues)
     model = bmb.Model(formula, df, family='cumulative')
-    trace = model.fit(draws=1000, tune=1000, cores=4, random_seed=42)
+    trace = model.fit(
+        draws=1000,
+        tune=1000,
+        chains=1,
+        cores=1,
+        random_seed=42
+    )
 
-    # 5. 結果サマリー取得とCSV出力
+    # 5. Extract summary and save to CSV
     summary = az.summary(
         trace,
         var_names=['hearing_status', 'gender', '~speaker', '~rater']
