@@ -15,11 +15,6 @@ def logits_to_label(logits: torch.Tensor) -> torch.Tensor:
 
 
 class HubertOrdinalRegressionModel(nn.Module):
-    """
-    CORAL-based ordinal regression using Japanese HuBERT embeddings.
-    - 入力: hubert_feats (batch, seq_len, hubert_dim)
-    - プーリング: 時間方向に平均
-    """
     def __init__(self,
                  hubert_dim: int = 768,
                  proj_dim: int = 256,
@@ -28,31 +23,27 @@ class HubertOrdinalRegressionModel(nn.Module):
         super().__init__()
         self.num_classes = num_classes
 
-        # HuBERT埋め込みを低次元に射影
         self.proj = nn.Linear(hubert_dim, proj_dim)
         self.dropout = nn.Dropout(dropout_rate)
 
-        # 共有ユニット
-        self.shared_fc = nn.Linear(proj_dim, 1)
-        # 閾値パラメータ
+        # 強化版 shared_fc
+        self.shared_fc = nn.Sequential(
+            nn.Linear(proj_dim, proj_dim // 2),
+            nn.ReLU(),
+            nn.Dropout(dropout_rate),
+            nn.Linear(proj_dim // 2, 1)
+        )
+
         self.thresholds = nn.Parameter(torch.zeros(num_classes - 1))
 
     def extract_features(self, hubert_feats: torch.Tensor) -> torch.Tensor:
-        """
-        hubert_feats: (B, T, hubert_dim)
-        -> (B, proj_dim) via projection + mean-pool + dropout
-        """
         x = F.relu(self.proj(hubert_feats))       # (B, T, proj_dim)
         x = x.mean(dim=1)                         # (B, proj_dim)
         return self.dropout(x)
 
     def forward(self, hubert_feats: torch.Tensor) -> torch.Tensor:
-        """
-        Returns:
-            logits: (batch, num_classes-1)
-        """
-        feat = self.extract_features(hubert_feats)  # (B, proj_dim)
-        g = self.shared_fc(feat)                   # (B, 1)
+        feat = self.extract_features(hubert_feats)
+        g = self.shared_fc(feat)                  # (B, 1)
         logits = g.repeat(1, self.num_classes - 1) - self.thresholds.view(1, -1)
         return logits
 
@@ -60,12 +51,7 @@ class HubertOrdinalRegressionModel(nn.Module):
         logits = self.forward(hubert_feats)
         return logits_to_label(logits)
 
-
 class AttentionHubertOrdinalRegressionModel(nn.Module):
-    """
-    CORAL-based ordinal regression with self-attention on HuBERT embeddings.
-    - TransformerEncoder を1層だけ使い，時間平均プーリング
-    """
     def __init__(self,
                  hubert_dim: int = 768,
                  embed_dim: int = 256,
@@ -75,7 +61,6 @@ class AttentionHubertOrdinalRegressionModel(nn.Module):
         super().__init__()
         self.num_classes = num_classes
 
-        # HuBERT特徴を埋め込み次元に射影
         self.hubert_proj = nn.Linear(hubert_dim, embed_dim)
         enc_layer = nn.TransformerEncoderLayer(
             d_model=embed_dim,
@@ -85,15 +70,17 @@ class AttentionHubertOrdinalRegressionModel(nn.Module):
         self.transformer = nn.TransformerEncoder(enc_layer, num_layers=1)
         self.dropout = nn.Dropout(dropout_rate)
 
-        # CORAL の shared_fc / thresholds
-        self.shared_fc = nn.Linear(embed_dim, 1)
+        # 強化版 shared_fc
+        self.shared_fc = nn.Sequential(
+            nn.Linear(embed_dim, embed_dim // 2),
+            nn.ReLU(),
+            nn.Dropout(dropout_rate),
+            nn.Linear(embed_dim // 2, 1)
+        )
+
         self.thresholds = nn.Parameter(torch.zeros(num_classes - 1))
 
     def extract_features(self, hubert_feats: torch.Tensor) -> torch.Tensor:
-        """
-        hubert_feats: (B, T, hubert_dim)
-        -> (B, embed_dim) via proj + transformer + mean + dropout
-        """
         x = F.relu(self.hubert_proj(hubert_feats))  # (B, T, embed_dim)
         x = x.transpose(0, 1)                       # (T, B, embed_dim)
         x = self.transformer(x)                     # (T, B, embed_dim)
@@ -102,15 +89,14 @@ class AttentionHubertOrdinalRegressionModel(nn.Module):
         return self.dropout(feat)
 
     def forward(self, hubert_feats: torch.Tensor) -> torch.Tensor:
-        feat = self.extract_features(hubert_feats)    # (B, embed_dim)
-        g = self.shared_fc(feat)                      # (B, 1)
+        feat = self.extract_features(hubert_feats)
+        g = self.shared_fc(feat)                    # (B, 1)
         logits = g.repeat(1, self.num_classes - 1) - self.thresholds.view(1, -1)
         return logits
 
     def predict(self, hubert_feats: torch.Tensor) -> torch.Tensor:
         logits = self.forward(hubert_feats)
         return logits_to_label(logits)
-
 
 class HubertCornModel(nn.Module):
     """
