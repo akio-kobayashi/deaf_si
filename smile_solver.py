@@ -45,7 +45,8 @@ class LitOrd(pl.LightningModule):
         self.num_correct = self.num_total = 0
         
     def forward(self, mfcc:Tensor, smile:Tensor, lengths:Tensor) -> Tensor:
-        return self.model(mfcc, lengths, smile)
+        #return self.model(mfcc, lengths, smile)
+        return self.model(mfcc=mfcc, lengths=lengths, smile_feats=smile)
 
     def training_step(self, batch, batch_idx:int) -> Tensor:
         self.model.train()
