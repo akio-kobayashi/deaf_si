@@ -35,7 +35,7 @@ class LitOrd(pl.LightningModule):
         if class_name == 'CornModel' or class_name == 'OrdinalRegressionModel':
             # 'n_heads' を除いた辞書を渡す
             filtered_cfg = {k: v for k, v in model_cfg.items() if k != 'n_heads'}
-            self.model = CornModel(**filtered_cfg)
+            self.model = ModelClass(**filtered_cfg)
         else:
             self.model = ModelClass(**model_cfg)
 
