@@ -45,7 +45,7 @@ class OrdinalRegressionModel(nn.Module):
         self.num_classes = num_classes
 
         if self.use_mfcc:
-            self.gru = nn.GRU(
+            self.gru = nn.LSTM(
                 num_mfcc,
                 gru_hidden_dim,
                 batch_first=True,
@@ -64,8 +64,14 @@ class OrdinalRegressionModel(nn.Module):
         )
 
         # 共有ユニット
-        self.shared_fc = nn.Linear(input_dim, 1)
-        self.dropout = nn.Dropout(dropout_rate)
+        self.shared_fc = nn.Sequential(
+             nn.Linear(input_dim, input_dim // 2),
+             nn.ReLU(),
+             nn.Dropout(dropout_rate),
+             nn.Linear(input_dim // 2, 1)
+        )
+        self.dropout = nn.Dropout(dropout_rate)  # これは extract_features 用に残してもよい
+
         # 閾値パラメータ (num_classes - 1)
         self.thresholds = nn.Parameter(torch.zeros(num_classes - 1))
 
@@ -113,10 +119,7 @@ class OrdinalRegressionModel(nn.Module):
         """
         # 特徴抽出
         x = self.extract_features(mfcc, lengths, smile_feats)
-        # 共有線形層 g = shared_fc(x)
-        g = self.shared_fc(x)           # (batch_size, 1)
-        g = self.dropout(g)
-        # 閾値を引く: g を各閾値に対して繰り返す
+        g = self.shared_fc(x)  # Dropoutは shared_fc 内で処理済み
         logits = g.repeat(1, self.num_classes - 1) - self.thresholds.view(1, -1)
         return logits
 

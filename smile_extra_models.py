@@ -47,7 +47,12 @@ class AttentionOrdinalRegressionModel(OrdinalRegressionModel):
         if use_smile:
             input_dim += embed_dim
         # override shared_fc
-        self.shared_fc = nn.Linear(input_dim, 1)
+        self.shared_fc = nn.Sequential(
+            nn.Linear(input_dim, input_dim // 2),
+            nn.ReLU(),
+            nn.Dropout(dropout_rate),
+            nn.Linear(input_dim // 2, 1)
+        )
         self.dropout = nn.Dropout(dropout_rate)
         # thresholds remain from base class
 
@@ -96,7 +101,7 @@ class CornModel(nn.Module):
 
         # same feature extractors as base
         if self.use_mfcc:
-            self.gru = nn.GRU(num_mfcc,
+            self.gru = nn.LSTM(num_mfcc,
                               gru_hidden_dim,
                               batch_first=True,
                               bidirectional=True)
