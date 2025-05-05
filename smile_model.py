@@ -135,5 +135,9 @@ class OrdinalRegressionModel(nn.Module):
         Returns:
             Tensor: 予測ラベル, shape = (batch_size,) with values in [1, num_classes]
         """
-        logits = self.forward(mfcc, lengths, smile_feats)
+        logits = self.model(
+            mfcc=mfcc, 
+            lengths=lengths, 
+            smile_feats=smile_feats
+        )
         return logits_to_label(logits)
