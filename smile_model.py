@@ -95,10 +95,18 @@ class OrdinalRegressionModel(nn.Module):
                 batch_first=True,
                 enforce_sorted=False
             )
-            _, hidden = self.gru(packed)
-            # 双方向GRUの隠れ状態を結合
-            h_fwd, h_bwd = hidden[0], hidden[1]
+
+            #  正しい unpack パターン
+            # self.gru(packed) → (_, (h_n, c_n))
+            _, (h_n, c_n) = self.gru(packed)
+            #  h_n: shape (num_layers * num_directions, batch, hidden_dim)
+            #  今回は num_layers=1, num_directions=2 なので h_n.shape == (2, B, hidden_dim)
+            #  各方向の最後の隠れ状態を取り出す
+            h_fwd = h_n[0]       # shape (batch, hidden_dim)
+            h_bwd = h_n[1]       # shape (batch, hidden_dim)
+            # 2 つを結合して (batch, hidden_dim*2)
             out_gru = torch.cat([h_fwd, h_bwd], dim=1)
+
             parts.append(self.gru_dropout(out_gru))
         if self.use_smile:
             embed = F.relu(self.smile_fc(smile_feats))

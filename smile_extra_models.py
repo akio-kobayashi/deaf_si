@@ -126,10 +126,10 @@ class CornModel(nn.Module):
         if self.use_mfcc:
             packed = nn.utils.rnn.pack_padded_sequence(
                 mfcc, lengths.cpu(), batch_first=True, enforce_sorted=False)
-            _, hidden = self.gru(packed)
-            h_fwd, h_bwd = hidden[0], hidden[1]
-            gru_out = torch.cat([h_fwd, h_bwd], dim=1)
-            parts.append(self.gru_dropout(gru_out))
+        _, (h_n, _) = self.gru(packed)          # 正しく h_n を取り出す
+        h_fwd, h_bwd = h_n[0], h_n[1]           # (B, H) と (B, H)
+        gru_out = torch.cat([h_fwd, h_bwd], dim=1)  # (B, 2H)
+        parts.append(self.gru_dropout(gru_out))
         if self.use_smile:
             smile_embed = F.relu(self.smile_fc(smile_feats))
             parts.append(self.smile_dropout(smile_embed))
