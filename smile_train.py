@@ -16,6 +16,8 @@ warnings.filterwarnings('ignore')
 
 
 def main(args, config:dict):
+    print(">>> loaded config['model'] =", config.get('model'))
+
     # 1) モデルとデータローダーの準備
     model = LitOrd(config)
 
